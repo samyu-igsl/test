@@ -1,0 +1,125 @@
+
+
+/* h1, h2, h3, h4, h5, h6 */
+/* Base (min-width: 0)*/
+h1, h2, h3, h4, h5, h6{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: var(--base-theme-body-font-weight-bold);
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-size: 1.35rem;
+  color: var(--base-theme-section-title-font-color);
+}
+
+
+/* Medium or above */
+@media (min-width: 992px){
+	h1, h2, h3, h4, h5, h6 {
+	  font-size: 1.5rem;
+	}
+}
+
+h1.no-margin, h2.no-margin, h3.no-margin, h4.no-margin, h5.no-margin, h6.no-margin{
+	margin-bottom: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+/* small font */
+.text-small{
+  font-size: var(--base-theme-body-smaller-font-size);
+}
+
+
+/* Hyperlink */
+a{
+	color: var(--theme-body-hyperlink-font-color-base);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a:hover {
+	color: var(--theme-body-hyperlink-font-color-hover);
+	text-decoration: none;
+}
+
+
+footer a{
+	color: var(--theme-footer-hyperlink-font-color-base);
+}
+
+footer a:hover {
+	color: var(--theme-footer-hyperlink-font-color-hover);
+	text-decoration: none;
+}
+
+a.link-anchor,
+a.link-anchor:hover,
+footer a.link-anchor,
+footer a.link-anchor:hover{
+	color: inherit;
+	text-decoration: inherit;
+	cursor: inherit;
+}
+
+
+/* Text Warning */
+a.link-warning{
+	color: var(--base-theme-text-warning-font-color);
+	text-decoration: underline;
+}
+
+a.link-warning:hover {
+	color: var(--base-theme-text-warning-font-color);
+	text-decoration: none;
+}
+
+.text-warning{
+	color: var(--base-theme-text-warning-font-color);
+}
+
+
+/* Text Block */
+label.text-block-label{
+	display: block;
+	font-weight: var(--base-theme-body-font-weight-bold);
+	margin-bottom: 0.25rem;
+}
+
+*+label.text-block-label{
+	margin-top: 1rem;
+}
+
+label.text-block-assist{
+	font-size: var(--base-theme-body-smaller-font-size);
+	display: block;
+}
+
+.text-compulsory:before{
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f621"; 
+	font-size: calc(var(--base-theme-body-smaller-font-size)*0.85);
+  
+	color: var(--base-theme-text-warning-font-color);
+	padding-right: 0.25rem;
+}
+
+/* Validation text */
+.text-validation-message:before{
+	/* "fa-solid fa-triangle-exclamation */
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f071"; 
+	padding-right: 0.25rem;
+}

@@ -1,0 +1,80 @@
+
+
+table.rwd-table{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+table.rwd-table tr{
+	line-height: 2rem;
+}
+
+table.rwd-table tr{
+	border-bottom: 2px solid var(--base-theme-separator-color);
+}
+
+	table.rwd-table tr:last-child{
+		/*border-bottom: 2px solid transparent;*/
+	}
+
+table.rwd-table th,
+table.rwd-table td{
+	padding: 0.5rem;
+	overflow-wrap: break-word;
+}
+
+table.rwd-table th{
+	text-align: left;
+	font-weight: var(--base-theme-body-font-weight-bold);
+}
+
+
+table.rwd-table td{
+	vertical-align: top;
+}
+
+table.rwd-table th{
+	vertical-align: bottom;
+}
+
+table.rwd-table:not([class*="no-bg-hover"]) tr:hover{
+	background-color: var(--theme-table-item-background-color-hover);
+}
+
+table.rwd-table tr > td:first-child input[type=checkbox]{
+	margin-top: 0.5rem;
+}
+
+/* :has selector does not work on firefox (up to 2022-10-05), but it just use to fine tune of position, no impact at all */
+table.rwd-table tr > th:has(input[type=checkbox]){
+	padding-bottom: 0.4rem;
+}
+
+
+table.rwd-table .rwd-table-side-button-area{
+	vertical-align: middle;
+	text-align: right;
+}
+
+
+/* 
+Auto scroll table helper class
+*/
+
+div.rwd-table-auto-scroll-rwd-s,
+div.rwd-table-auto-scroll-rwd-m{
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+	div.rwd-table-auto-scroll-rwd-s table.rwd-table{
+		min-width: calc(720px - (var(--base-theme-unsafe-padding-margin)*2));
+	}
+
+	div.rwd-table-auto-scroll-rwd-m table.rwd-table{
+		min-width: calc(960px - (var(--base-theme-unsafe-padding-margin)*2));
+	}

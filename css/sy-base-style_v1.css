@@ -1,0 +1,297 @@
+
+
+:root {
+	--base-theme-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--base-theme-body-font-size: 1rem; /* Typically browser default is "medium size" (16px) */
+	--base-theme-body-font-weight: 400; /* Regular */
+	--base-theme-body-font-weight-bold: 600; /* 600 */
+	--base-theme-body-line-height: 1.5; /* 1rem * 1.5  = 1.5 rem */
+	
+	--base-theme-body-smaller-font-size: 0.85rem; /* Typically browser default is "medium size" (16px * 0.85 = 13.6px) */
+	
+	/* Body and container */
+	--base-theme-body-font-color: #212529; /* Body font is always in dark grey */
+	--base-theme-body-background-color: #F4F4F4; /* Body background in grey for helping consentration in working area */
+	--base-theme-body-container-background-color: #FFF; /* The working area is always in white */
+	--base-theme-body-item-option-extra-content-background-color: #F4F4F4; /* item-option-extra-content is always in grey */
+	
+	/* Text */
+	--base-theme-text-warning-font-color: #D33030;
+	
+	
+	/* Grid */
+	--base-theme-grid-card-border-color: #D9D9D9; /* Grid card border is always in grey */
+	
+	/* Separator */
+	--base-theme-separator-color: #F4F4F4;
+	
+	/* Skeleton Color */
+	--base-theme-skeleton-color: #F4F4F4;
+	
+	/* Form */
+	--base-theme-form-textbox-border-color: #D9D9D9;
+	--base-theme-form-textarea-min-row: 5;
+	--base-theme-form-element-min-height: 2rem;
+	--base-theme-form-element-readonly-background-color: #F9F9F9;
+	--base-theme-form-element-disabled-background-color: #D9D9D9;
+	
+	
+	--base-theme-form-overlay-icon-btn-size: calc(var(--base-theme-form-element-min-height) * 0.65);
+	--base-theme-form-overlay-icon-font-size: calc(var(--base-theme-form-element-min-height) * 0.35);
+	--base-theme-form-overlay-icon-custom-font-size: calc(var(--base-theme-form-element-min-height) * 0.5);
+	
+	/* Badge size */
+	--base-theme-badge-height: 1.35rem;
+	--base-theme-badge-mini-height: 10px;
+	
+	/* Do not modify unless you have calculated the contract level */
+	/* WCAG 2.1 AA required a contrast ratio at minimum 4.5:1 for text < 24px */
+	
+	/* Badge default */
+	/* Contrast ratio at 9.6:1 */
+	--base-theme-badge-default-background-color: #CCCCCC;
+	--base-theme-badge-default-font-color: #212529;
+
+	/* Badge red */
+	/* Contrast ratio at 4.66:1 */
+	--base-theme-badge-red-background-color: #D83636;
+	--base-theme-badge-red-font-color: #FFF;
+	
+	/* Badge yellow */
+	/* Contrast ratio at 11.07:1 */
+	--base-theme-badge-yellow-background-color: #FFD800;
+	--base-theme-badge-yellow-font-color: #212529;
+	
+	/* Badge green */
+	/* Contrast ratio at 4.58:1 */
+	--base-theme-badge-green-background-color: #008900;
+	--base-theme-badge-green-font-color: #FFF;
+	
+	/* Badge blue */
+	/* Contrast ratio at 4.51:1 */
+	--base-theme-badge-blue-background-color: #007ACC;
+	--base-theme-badge-blue-font-color: #FFF;
+	
+	
+	/* Warning button */
+	/* Contrast ratio at 4.66:1 */
+	--base-theme-warning-btn-background-color-base: #D83636;
+	--base-theme-warning-btn-background-color-hover: #D83636;
+	--base-theme-warning-btn-background-color-active: #C44644;
+	--base-theme-warning-btn-font-color-base: #ffffff;
+	--base-theme-warning-btn-font-color-hover: #ffffff;
+	--base-theme-warning-btn-font-color-active: #ffffff;
+	--base-theme-warning-btn-text-decoration: line-through;
+	
+	/* Disabled button */
+	/* WCAG 2.1 AA: Incidental: Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement. */
+
+	--base-theme-disabled-btn-background-color-base: #E0E0E0;
+	--base-theme-disabled-btn-background-color-hover: #E0E0E0;
+	--base-theme-disabled-btn-background-color-active: #E0E0E0;
+	--base-theme-disabled-btn-font-color-base: #9E9E9E;
+	--base-theme-disabled-btn-font-color-hover: #9E9E9E;
+	--base-theme-disabled-btn-font-color-active: #9E9E9E;
+	
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	font-family: var(--base-theme-body-font-family);
+	font-size: var(--base-theme-body-font-size);
+	font-weight: var(--base-theme-body-font-weight);
+	color: var(--base-theme-body-font-color);
+	line-height: var(--base-theme-body-line-height);
+	background-color: var(--base-theme-body-background-color);
+}
+
+header{
+	
+}
+
+footer{
+	color: var(--theme-footer-font-color);
+	background-color: var(--theme-footer-background-color);
+}
+
+
+p, div, section, span, label, h1, h2, h3, h4, h5, h6, th, td, button, select, input, textarea, option, optgroup{
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+
+/* Containers & Breakpoints */
+/* Base style */
+.container{
+	margin-right: auto;
+	margin-left: auto;
+	min-width: 320px;
+	max-width: 100%;
+	padding: 0;
+}
+
+.container-fluid{
+	max-width: 100%;
+}
+
+.container,
+.container-fluid{
+	color: var(--base-theme-body-font-color);
+	background-color: var(--base-theme-body-container-background-color);
+}
+
+footer .container,
+footer .container-fluid{
+	color: var(--theme-footer-font-color);
+	background-color: var(--theme-footer-container-background-color);
+}
+
+
+/* Small */
+@media (min-width: 768px){
+	.container{
+		max-width: 720px;
+	}
+}
+
+/* Medium */
+@media (min-width: 992px){
+	.container{
+		max-width: 960px;
+	}
+}
+
+/* Large */
+@media (min-width: 1200px){
+	.container{
+		max-width: 1140px;
+	}
+}
+
+/* Extra Large */
+@media (min-width: 1500px){
+	.container{
+		max-width: 1440px;
+	}
+}
+
+/* Extra Extra Large */
+/*
+@media (min-width: 1600px){
+	.container{
+		max-width: 1540px;
+	}
+}
+*/
+
+/* Unsafe Area Padding or Margin */
+:root {
+	/* At Viewport 767px, the unsafe area will be calculated as 14px + 15.34px */ 
+	/* At Viewport 320px, the unsafe area will be calculated as 14px + 6.4px */ 
+	--base-theme-unsafe-padding-margin: calc(14px + 2vw);
+}
+
+@media (min-width: 768px){
+	/* At viewport 768px or above, the unsafe area will become 40px fixed */ 
+	:root {
+		--base-theme-unsafe-padding-margin: 40px;
+	}
+}
+
+
+/* Section content */
+section{
+  max-width: 100%;
+  padding: var(--base-theme-unsafe-padding-margin);
+}
+
+section.section-fluid{
+  max-width: 100%;
+  padding: 0;
+}
+
+/* Session wrapper */
+div.session-wrapper{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 0;
+}
+
+div.session-wrapper-menu-on-left{
+	grid-template-columns: 300px calc(100% - 300px);
+}
+
+	div.session-wrapper-menu-on-left div.session-wrapper-content{
+		grid-column: span 2;
+	}
+
+	div.session-wrapper-menu-on-left div.session-wrapper-menu{
+		display: none;
+	}
+
+
+	@media (min-width: 992px){
+		div.session-wrapper-menu-on-left div.session-wrapper-content{
+		   grid-column: 2;
+		}
+
+		div.session-wrapper-menu-on-left div.session-wrapper-menu{
+			grid-column: 1;
+			display: block;
+		}
+	}
+
+	div.session-wrapper-menu-on-left div.session-wrapper-menu section{
+	  padding: var(--base-theme-unsafe-padding-margin) 0 var(--base-theme-unsafe-padding-margin) var(--base-theme-unsafe-padding-margin);
+	}
+
+div.session-wrapper-menu-on-right{
+	grid-template-columns: calc(100% - 300px) 300px;
+}
+
+	div.session-wrapper-menu-on-right div.session-wrapper-content{
+		grid-column: span 2;
+	}
+
+	div.session-wrapper-menu-on-right div.session-wrapper-menu{
+		display: none;
+	}
+
+
+	@media (min-width: 992px){
+		div.session-wrapper-menu-on-right div.session-wrapper-content{
+		   grid-column: 1;
+		}
+
+		div.session-wrapper-menu-on-right div.session-wrapper-menu{
+			grid-column: 2;
+			display: block;
+		}
+	}
+
+	div.session-wrapper-menu-on-right div.session-wrapper-menu section{
+	  padding: var(--base-theme-unsafe-padding-margin) var(--base-theme-unsafe-padding-margin) var(--base-theme-unsafe-padding-margin) 0;
+	}
+
+
+[class*="session-wrapper-"] {
+	margin: 0;
+	padding: 0;
+}
+
+/* Remove duplicated padding for continuous sections */ 
+section~section {
+	padding-top: 0;
+}
+

@@ -1,0 +1,77 @@
+
+/* Badge */
+.badge {
+	display: inline-block;
+	font-size: var(--base-theme-body-smaller-font-size);
+	font-weight: var(--base-theme-body-font-weight-bold);
+	border-radius: 1rem;
+	border-width: 0;
+	border-style: none;
+	color: #212529;
+	padding: 0.2rem 1rem;
+	margin: 0.1rem;
+	height: var(--base-theme-badge-height);
+	line-height: var(--base-theme-body-smaller-font-size);
+	display: inline-block;
+}
+
+h1 .badge:before,
+h2 .badge:before,
+h3 .badge:before,
+h4 .badge:before,
+h5 .badge:before,
+h6 .badge:before{
+	content: "";
+	vertical-align: middle;
+	display: inline-block;
+	height: inherit;
+}
+
+
+
+
+.badge{
+	background-color: var(--base-theme-badge-default-background-color);
+	color: var(--base-theme-badge-default-font-color);
+}
+
+.badge-green {
+	background-color: var(--base-theme-badge-green-background-color);
+	color: var(--base-theme-badge-green-font-color);
+}
+
+.badge-blue {
+	background-color: var(--base-theme-badge-blue-background-color);
+	color: var(--base-theme-badge-blue-font-color);
+}
+
+.badge-red {
+	background-color: var(--base-theme-badge-red-background-color);
+	color: var(--base-theme-badge-red-font-color);
+}
+
+.badge-yellow {
+	background-color: var(--base-theme-badge-yellow-background-color);
+	color: var(--base-theme-badge-yellow-font-color);
+}
+
+.button-mini-badge-overlay {
+	content: "" !important;
+	display: inline-block;
+	position: relative;
+	top: 0;
+	right: 0;
+	border-radius: 50%;
+	border-width: 0;
+	border-style: none;
+
+	padding: 0;
+	margin: 0;
+	width: var(--base-theme-badge-mini-height);
+	height: var(--base-theme-badge-mini-height);
+	display: inline-block;
+}
+
+.badge-mini{
+	background-color: var(--base-theme-badge-default-background-color);
+}

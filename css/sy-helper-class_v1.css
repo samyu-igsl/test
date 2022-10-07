@@ -1,0 +1,76 @@
+
+/**
+Chop text
+**/
+.chop-text{
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	overflow-wrap: break-word !important;
+	text-overflow: ellipsis !important;
+}
+
+/**
+Auto hide at responsive layout
+Class: auto-hide-rwd-*
+**/
+@media (max-width: 767.99px){ 
+	.auto-hide-rwd-xs{
+		display: none !important;
+	}
+}
+
+@media (max-width: 991.99px){ 
+	.auto-hide-rwd-s{
+		display: none !important;
+	}
+}
+
+@media (max-width: 1199.99px){ 
+	.auto-hide-rwd-m{
+		display: none !important;
+	}
+}
+
+/**
+Auto align center at responsive layout
+
+**/
+@media (max-width: 767.99px){ 
+	.auto-align-center-rwd-xs{
+		text-align: center;
+	}
+}
+
+@media (max-width: 991.99px){ 
+	.auto-align-center-rwd-s{
+		text-align: center;
+	}
+}
+
+@media (max-width: 1199.99px){ 
+	.auto-align-center-rwd-m{
+		text-align: center;
+	}
+}
+
+/**
+Text Alignment
+**/
+.text-align-left{
+	text-align: left;
+}
+
+.text-align-center{
+	text-align: center;
+}
+
+.text-align-right{
+	text-align: right;
+}
+
+/**
+Hide
+**/
+.hide{
+	display: none !important;
+}

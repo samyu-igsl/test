@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+<link href="css/sy-default-theme_v1.css" rel="stylesheet">
+<link href="css/sy-base-style_v1.css" rel="stylesheet">
+<link href="css/sy-grid-system_v1.css" rel="stylesheet">
+<link href="css/sy-stacked-list_v1.css" rel="stylesheet">
+<link href="css/sy-table_v1.css" rel="stylesheet">
+<link href="css/sy-text_and_font_v1.css" rel="stylesheet">
+<link href="css/sy-form_v1.css" rel="stylesheet">
+<link href="css/sy-skeleton_v1.css" rel="stylesheet">
+<link href="css/sy-helper-class_v1.css" rel="stylesheet">
+
+<link href="css/x-helper.css" rel="stylesheet">
+
+<link href="fontawesome-free-6.2.0-web/css/fontawesome.css" rel="stylesheet">
+<link href="fontawesome-free-6.2.0-web/css/solid.css" rel="stylesheet">
+
+  
+<title>Form</title>
+
+</head>
+<body>
+<div class="container">
+	<div class="content">
+		<h1 id="current-breakpoint">** Breakpoint: </h1>
+		<br>
+	</div>
+</div>
+
+
+<div class="container">
+	<section>
+		<h1>Form</h1>
+
+		<label class="text-block-label">Input[type=text]</label>
+		<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+
+		<label class="text-block-label">Input[type=text] Disabled</label>
+		<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345" disabled="disabled">
+
+		<label class="text-block-label">With assist text</label>
+		<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+		<label class="text-block-assist">Password must contain a combination of a-z, A-Z and 0-9</label>
+
+		<label class="text-block-label">Input[type=password]</label>
+		<input class="rwd-input-password" type="password" placeholder="text"  value="ABCDE12345">
+
+		<label class="text-block-label">Multiple input boxes</label>
+		<input class="rwd-input-text text-align-center" type="text" style="width: 2rem" maxlength="1" value="1">
+		<input class="rwd-input-text text-align-center" type="text" style="width: 2rem" maxlength="1" value="2">
+		<input class="rwd-input-text text-align-center" type="text" style="width: 2rem" maxlength="1" value="3">
+		<input class="rwd-input-text text-align-center" type="text" style="width: 2rem" maxlength="1" value="4">
+		<input class="rwd-input-text text-align-center" type="text" style="width: 2rem" maxlength="1" value="5">
+		<input class="rwd-input-text text-align-center" type="text" style="width: 2rem" maxlength="1" value="6">
+		<label class="text-block-assist">The input boxes are fixed with 2rem width and aligned center</label>
+
+		<label class="text-block-label">Input[type=checkbox]</label>
+		<label class="rwd-input-checkbox-item"><input type="checkbox"> Item One</label>
+		<label class="rwd-input-checkbox-item"><input type="checkbox"> Item Two</label>
+
+
+		<label class="text-block-label">Input[type=radio]</label>
+		<label class="rwd-input-radio-item"><input type="radio"> Item One</label>
+		<label class="rwd-input-radio-item"><input type="radio"> Item Two<br>Item Two</label>
+		
+
+		<label class="text-block-label">Input[type=radio], Combo with optional content</label>
+		<label class="rwd-input-radio-item">
+			<input type="radio"> 
+			<span>
+				On
+			</span>
+		</label>
+		<div class="rwd-input-checkbox-radio-item-option-extra-content">
+			Set it to <input class="rwd-input-text" type="text" placeholder="1-9" style="width: 3rem"> days.
+		</div>
+		<label class="rwd-input-radio-item"><input type="radio"> Off</label>
+		
+		<label class="text-block-label">Input[type=checkbox], Combo with optional content</label>
+		<label class="rwd-input-checkbox-item"><input type="checkbox"> Other option</label>
+		<div class="rwd-input-checkbox-radio-item-option-extra-content">
+			Set it to <input class="rwd-input-text" type="text" placeholder="1-9" style="width: 3rem"> days.
+		</div>
+		
+		<label class="text-block-label">Input[type=checkbox/radio], Combo with optional content with nexted checkbox / radio button</label>
+		<label class="rwd-input-radio-item">
+			<input type="radio"> 
+			<span>
+				On
+			</span>
+		</label>
+		<div class="rwd-input-checkbox-radio-item-option-extra-content">
+			<label class="rwd-input-checkbox-item"><input type="checkbox"> Nested checkbox</label>
+			<label class="rwd-input-radio-item"><input type="radio"> Nested radio</label>
+			<select class="rwd-select">
+				<option value="" disabled selected>Please select...</option>
+				<option value="1">Option 1</option>
+				<option value="1">Option 2</option>
+				<option value="1">Option 3</option>
+				<option value="1">Option 4</option>
+			</select>
+		</div>
+		
+		<label class="text-block-label">Textarea</label>
+		<textarea class="rwd-textarea" placeholder="textarea" style="width: 500px" >ABCDE12345
+ABCDE12345
+ABCDE12345</textarea>
+
+
+		<label class="text-block-label">Select with option group</label>
+		<select class="rwd-select">
+			<option value="" disabled selected>Please select...</option>
+			<optgroup label="Group 1">
+				<option value="1">Option 1</option>
+				<option value="1">Option 2</option>
+			</optgroup>
+			<optgroup label="Group 2">
+				<option value="1">Option 3</option>
+				<option value="1">Option 4</option>
+			</optgroup>
+		</select>
+
+		<label class="text-block-label">Select without option group</label>
+		<select class="rwd-select">
+			<option value="" disabled selected>Please select...</option>
+			<option value="1">Option 1</option>
+			<option value="1">Option 2</option>
+			<option value="1">Option 3</option>
+			<option value="1">Option 4</option>
+		</select>
+
+		<label class="text-block-label">More complex case</label>
+		<select class="rwd-select">
+			<option value="" disabled selected>Please select...</option>
+			<optgroup label="Group 1">
+				<option value="1">Option 1</option>
+				<option value="1">Option 2</option>
+			</optgroup>
+			<optgroup label="Group 2">
+				<option value="1">Option 3</option>
+				<option value="1">Option 4</option>
+			</optgroup>
+		</select>
+		<input class="rwd-input-text" type="text" placeholder="text" value="Same line input">
+		<label class="text-block-assist">An assist text to help user for choosing option</label>
+
+
+		<label class="text-block-label">Upload file</label>
+		<input type="file" class="rwd-input-file">
+		<label class="text-block-assist">Extension: jpg, png, gif. Max size: 100MB. Resolution: 1024 x 768. </label>
+		
+		<label class="text-block-label">Upload file (Disabled)</label>
+		<input type="file" class="rwd-input-file" disabled>
+		<label class="text-block-assist">Extension: jpg, png, gif. Max size: 100MB. Resolution: 1024 x 768. </label>
+
+	</section>
+
+	<section>
+		<h1>Button</h1>
+
+		<label class="text-block-label">button (non-reponsive)</label>
+		
+		<button type="submit" class="btn-primary">Primary</button>
+		<button class="btn-secondary">Secondary</button>
+		<button class="btn-primary" disabled>Disabled - Primary</button>
+		<button class="btn-secondary" disabled>Disabled - Secondary</button>
+		<button class="btn-disabled" disabled>Disabled</button>
+		<button class="btn-warning" >Warning</button>
+		<button class="btn-circle btn-primary"><i class="fa-solid fa-house"></i></button>
+		<button class="btn-primary"><i class="fa-solid fa-house"></i> Home</button>
+		<a class="btn btn-primary">Hyperlink in button style</a>
+
+		<label class="text-block-label">button (responsive)</label>
+		
+		<button type="submit" class="btn-primary rwd-btn">Responsive button (span the row)</button>
+		<div class="auto-align-center-rwd-xs">
+			<button type="submit" class="btn-primary">Responsive button (auto align center)</button>
+		</div>
+		
+		<button type="submit" class="btn-primary btn-indicator">Button with indicator</button>
+		
+	</section>
+
+	<section>
+		<h1>Input group and Data Lookup</h1>
+		
+		<label class="text-block-label">Input group</label>
+		<div class="rwd-input-group" style="width: 500px">
+			<input type="text">
+			<button class="btn-secondary">Check</button> 
+		</div>
+		
+		<label class="text-block-label">English Name (Surname first)</label>
+		<div class="rwd-input-group" style="width: 500px">
+			<input type="text" placeholder="Surname">
+			<input type="text" placeholder="Given name">
+			<select>
+				<option value="" selected disabled>Title...</option>
+			</select>
+		</div>
+		
+		
+		
+		<label class="text-block-label">Input group with X icon</label>
+		<div class="rwd-input-group" style="width: 500px">
+			<input class="rwd-input-group-shrink-for-overlay-icon" type="text">
+			<a class="btn btn-shorthand-delete rwd-input-group-overlay-icon"></a>
+		</div>
+		
+		<label class="text-block-label">Input group with X icon</label>
+		<div class="rwd-input-group" style="width: 500px">
+			<input class="rwd-input-group-shrink-for-overlay-icon" type="text">
+			<a class="btn btn-shorthand-delete rwd-input-group-overlay-icon"></a>
+			<input class="rwd-input-group-shrink-for-overlay-icon" type="text">
+			<a class="btn btn-shorthand-delete rwd-input-group-overlay-icon"></a>
+		</div>
+		
+		<label class="text-block-label">Input group with custom icon</label>
+		<div class="rwd-input-group" style="width: 500px">
+			<input class="rwd-input-group-shrink-for-overlay-icon" type="text">
+			<a class="btn btn-shorthand-delete rwd-input-group-overlay-icon-custom"></a>
+			<input class="rwd-input-group-shrink-for-overlay-icon" type="text">
+			<a class="btn rwd-input-group-overlay-icon-custom"><i class="fa-solid fa-magnifying-glass"></i></a>
+			<input class="rwd-input-group-shrink-for-overlay-icon" type="text">
+			<a class="btn rwd-input-group-overlay-icon-custom"><i class="fa-solid fa-calendar"></i></a>			
+		</div>
+		
+		<label class="text-block-label">Lookup Data</label>
+		<div class="rwd-input-group" style="width: 500px">
+			<input class="rwd-input-group-shrink-for-overlay-icon" type="text" readonly>
+			<a class="btn btn-shorthand-delete rwd-input-group-overlay-icon"></a>
+			<button class="btn-secondary">Select...</button>
+		</div>
+
+	</section>
+
+
+
+	<section>
+		<h1>Button placed inside a page action area</h1>
+		
+		<label class="text-block-label">Input</label>
+		<input class="rwd-input-text" type="text" placeholder="text" value="">
+		
+		<label class="text-block-label">Input</label>
+		<input class="rwd-input-text" type="text" placeholder="text" value="">
+		
+		<div class="page-action-button-area">
+			<button type="submit" class="btn-primary">Save</button>
+			<button type="submit" class="btn-secondary">Cancel</button>
+		</div>
+		
+	</section>
+	
+	<section>
+		<h1>Compulsory</h1>
+		<label class="text-block-label text-compulsory">Text label</label>
+		<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+		
+	</section>
+	<section>
+		<h1>Validation</h1>
+		<label class="text-block-label text-compulsory text-warning">Text label</label>
+		<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+		<label class="text-block-assist text-warning text-validation-message">The value is missing.</label>
+		
+		<label class="text-block-label text-compulsory text-warning">Password</label>
+		<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+		<label class="text-block-assist text-warning text-validation-message">The format is incorrect.</label>
+		<label class="text-block-assist">Password must contain a combination of a-z, A-Z and 0-9.</label>
+		
+	</section>
+	<section>
+		<h1>Form in a unstyled stack list</h1>
+
+		<div class="stacked-list">
+			<div class="stacked-list-body">
+				<div class="stacked-list-body-row stack-of-4">
+					<div class="stack-cell">
+						<label class="text-block-label chop-text compulsory">Display Name</label>
+						<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+						<label class="text-block-assist">The name display in the system</label>
+					</div>
+					<div class="stack-cell">
+						<label class="text-block-label chop-text">Full Name</label>
+						<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+					</div>
+					<div class="stack-cell stack-span-2">
+						<label class="text-block-label chop-text">Email</label>
+						<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+					</div>
+				</div>
+				<div class="stacked-list-body-row stack-of-4">
+					<div class="stack-cell">
+						<label class="text-block-label chop-text">Data 1</label>
+						<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+					</div>
+					<div class="stack-cell">
+						<label class="text-block-label chop-text">Data 2</label>
+						<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+					</div>
+					<div class="stack-cell">
+						<label class="text-block-label chop-text">Data 3</label>
+						<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
+					</div>
+					<div class="stack-cell">
+		<label class="text-block-label">Upload file</label>
+		<input type="file" class="rwd-input-file">
+		<label class="text-block-assist">Extension: jpg, png, gif. Max size: 100MB. Resolution: 1024 x 768. </label>
+		
+
+					</div>
+				</div>
+				<div class="stacked-list-body-row stack-of-41">
+					<div class="stack-cell">
+						<label class="text-block-label">Description</label>
+						<textarea class="rwd-textarea" placeholder=""></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</div>
+
+
+<div class="container">
+	<section>
+		<h1>Skeleton - Grid Card</h1>
+		<div class="grid-card-list">
+			<div class="grid-card skeleton">
+				<div class="grid-card-body">
+					<div class="grid-card-body-image-cap">
+						<div class="skeleton-image"></div>
+					</div>
+					<div class="grid-card-body-title">
+						<div class="skeleton-title"></div>
+					</div>
+					<div class="grid-card-body-abstract">
+						<div class="skeleton-text-90"></div>
+						<div class="skeleton-text-90"></div>
+						<div class="skeleton-text-90"></div>
+						<div class="skeleton-text-90"></div>
+						<div class="skeleton-text-90"></div>
+					</div>
+				</div>
+				<div class="grid-card-footer">
+					<div class="grid-card-footer-wrapper">
+						<div class="grid-card-footer-left">
+							<div class="skeleton-text-40"></div>
+						</div>
+						<div class="grid-card-footer-right">
+							<div class="skeleton-circle-button"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<h1>Skeleton - Stack list (stacked-with-style-in-block)</h1>
+		<div class="stacked-list stacked-with-style-in-block skeleton-stacked-list"></div>
+		<div class="stacked-list stacked-with-style-in-block skeleton-stacked-list"></div>
+		<div class="stacked-list stacked-with-style-in-block skeleton-stacked-list"></div>
+	</section>
+	<section>
+		<h1>Skeleton - Stack list (stacked-with-style-in-separator)</h1>
+		<div class="stacked-list stacked-with-style-in-separator skeleton-stacked-list"></div>
+		<div class="stacked-list stacked-with-style-in-separator skeleton-stacked-list"></div>
+		<div class="stacked-list stacked-with-style-in-separator skeleton-stacked-list"></div>
+	</section>
+	<section>
+		<h1>Skeleton - Traditional Table</h1>
+		<table class="rwd-table">
+			<tr>
+				<th style="width: 50px"><!--<input type="checkbox">--></th>
+				<th style="width: 20%"><div class="skeleton-text"></th>
+				<th style="width: auto"><div class="skeleton-text"></th>
+				<th style="width: auto"><div class="skeleton-text"></th>
+				<th style="width: 50px"></th>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="skeleton-text"></td>
+				<td><div class="skeleton-text"></td>
+				<td><div class="skeleton-text"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="skeleton-text"></td>
+				<td><div class="skeleton-text"></td>
+				<td><div class="skeleton-text"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="skeleton-text"></td>
+				<td><div class="skeleton-text"></td>
+				<td><div class="skeleton-text"></td>
+				<td></td>
+			</tr>
+		</table>
+	</section>
+</div>
+
+<footer>
+	<div class="container">
+		<section>
+			<h1>Footer</h1>
+			<p>
+			This is <a href="">hyperlink</a> in footer. This is <a name="anchor">anchor</a> only in footer.
+			</p>
+
+		</section>
+	</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+:root{
+	
+
+	/* Footer */
+	--theme-footer-font-color: #FFF;
+	--theme-footer-background-color: black;
+	--theme-footer-container-background-color: black;
+	
+	
+	/* hyperlink */
+	--theme-body-hyperlink-font-color-base: #1B65B5;
+	--theme-body-hyperlink-font-color-hover: #004B82;
+	--theme-footer-hyperlink-font-color-base: #FF7921;
+	--theme-footer-hyperlink-font-color-hover: #FF7921;
+	
+	/* Form */
+
+	
+	
+	/* Primary button */
+	--theme-primary-btn-background-color-base: #1B65B5;
+	--theme-primary-btn-background-color-hover: #1B65B5;
+	--theme-primary-btn-background-color-active: #004B82;
+	--theme-primary-btn-font-color-base: #ffffff;
+	--theme-primary-btn-font-color-hover: #ffffff;
+	--theme-primary-btn-font-color-active: #ffffff;
+	
+	/* Secondary button */
+	--theme-secondary-btn-background-color-base: #767676;
+	--theme-secondary-btn-background-color-hover: #767676;
+	--theme-secondary-btn-background-color-active: #69788E;
+	--theme-secondary-btn-font-color-base: #ffffff;
+	--theme-secondary-btn-font-color-hover: #ffffff;
+	--theme-secondary-btn-font-color-active: #ffffff;
+
+	
+	/* Stacked list */
+	--theme-stacked-item-background-color: #F4F4F4;
+	--theme-stacked-item-background-color-hover: #FFF5D1;
+	
+	/* Traditional table */
+	--theme-table-item-background-color-hover: #FFF5D1;
+	
+	
+	
+	
+}
