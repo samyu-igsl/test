@@ -402,7 +402,8 @@ label.rwd-input-radio-item > input[type=radio]{
 	.rwd-input-group select+select,
 	.rwd-input-group a+input,
 	.rwd-input-group a+select {
-		margin-left1: 0.25rem;
+		margin-left: 0.25rem;
+		margin-top: 0 !important;
 	}
 
 	.rwd-input-group > button,
