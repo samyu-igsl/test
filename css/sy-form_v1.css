@@ -165,7 +165,6 @@ input.rwd-input-file:disabled::file-selector-button{
 	border-width: 1px 0 0 0;
 	border-style: solid;
 	border-color: var(--base-theme-separator-color);
-	background-color1: #DCDCDC;
 	text-align: center;
 }
 
@@ -184,9 +183,13 @@ textarea{
 	font-size: var(--base-theme-body-font-size);
 	line-height: var(--base-theme-body-line-height);
 	padding: 0 var(--base-theme-form-textbox-padding-left-right);
-	height: calc(var(--base-theme-body-font-size) * var(--base-theme-body-line-height)); /* fix firefox omitting line-height */
 	min-height: var(--base-theme-form-element-min-height);
 	margin-bottom: 0.25rem;
+}
+
+input[type=file],
+select{
+	height: var(--base-theme-form-element-min-height);
 }
 
 input[type=text],
