@@ -9,6 +9,7 @@ input.rwd-input-file::file-selector-button{
 	padding: 0 1rem;
 	margin: 0 0.25rem 0.25rem 0.25rem;
 	vertical-align: middle;
+	font-family: inherit;
 	font-size: 1rem;
 	border-radius: 3px;
 	border-style: none;
@@ -183,6 +184,7 @@ textarea{
 	font-size: var(--base-theme-body-font-size);
 	line-height: var(--base-theme-body-line-height);
 	padding: 0 var(--base-theme-form-textbox-padding-left-right);
+	height: calc(var(--base-theme-body-font-size) * var(--base-theme-body-line-height)); /* fix firefox omitting line-height */
 	min-height: var(--base-theme-form-element-min-height);
 	margin-bottom: 0.25rem;
 }
@@ -240,17 +242,27 @@ textarea.rwd-textarea{
 	height: calc((var(--base-theme-body-font-size) * var(--base-theme-body-line-height) * var(--base-theme-form-textarea-min-row)) + 1px + 1px); 
 }
 
+
+input[type=file]::before{
+	vertical-align: middle;
+	display: inline-block;
+	content: "";
+	height: var(--base-theme-form-element-min-height);
+}
+
 input.rwd-input-file{
-	display: block;
+	display: inline-block;
 	background-color: var(--theme-secondary-btn-background-color-base);
 	color: var(--theme-secondary-btn-font-color-base);
 	cursor: pointer;
 	border-color: var(--theme-secondary-btn-background-color-base);
 }
 
+
 input.rwd-input-file::-webkit-file-upload-button,
 input.rwd-input-file::file-selector-button{
 	-webkit-appearance: none;
+	appearance: none;
 	border-right-width: 2px;
 	border-right-style: solid;
 	border-right-color: var(--theme-secondary-btn-font-color-base);
@@ -265,7 +277,7 @@ input.rwd-input-file:disabled::file-selector-button{
 }
 
 input.rwd-input-file:disabled{
-	display: block;
+	display: inline-block;
 	background-color: var(--base-theme-disabled-btn-background-color-base);
 	color: var(--base-theme-disabled-btn-font-color-base);
 	cursor: pointer;
