@@ -267,8 +267,8 @@ input.rwd-input-file::file-selector-button{
 	border-right-style: solid;
 	border-right-color: var(--theme-secondary-btn-font-color-base);
 	border-radius: 0;
-	height: var(--base-theme-body-font-size);
-	line-height: var(--base-theme-body-font-size);
+	height: auto;
+	line-height1: var(--base-theme-body-font-size);
 }
 
 input.rwd-input-file:disabled::-webkit-file-upload-button,
