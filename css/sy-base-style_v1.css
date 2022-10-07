@@ -35,6 +35,8 @@
 	--base-theme-form-element-readonly-background-color: #F9F9F9;
 	--base-theme-form-element-disabled-background-color: #D9D9D9;
 	
+	--base-theme-form-textbox-padding-left-right: 0.5rem;
+	
 	
 	--base-theme-form-overlay-icon-btn-size: calc(var(--base-theme-form-element-min-height) * 0.65);
 	--base-theme-form-overlay-icon-font-size: calc(var(--base-theme-form-element-min-height) * 0.35);

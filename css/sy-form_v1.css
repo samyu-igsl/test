@@ -177,11 +177,9 @@ select,
 optgroup,
 option,
 textarea{
-	--textbox-padding-top-bottom: 0.25rem;
-	--textbox-padding-left-right: 0.5rem;
 	font-size: var(--base-theme-body-font-size);
 	line-height: var(--base-theme-body-line-height);
-	padding: var(--textbox-padding-top-bottom) var(--textbox-padding-left-right);
+	padding: 0 var(--base-theme-form-textbox-padding-left-right);
 	min-height: var(--base-theme-form-element-min-height);
 	margin-bottom: 0.25rem;
 }
@@ -236,7 +234,7 @@ optgroup{
 
 textarea.rwd-textarea{
 	/* (font-size x line-height x N rows) + top padding + bottom padding + top border + bottom border */
-	height: calc((var(--base-theme-body-font-size) * var(--base-theme-body-line-height) * var(--base-theme-form-textarea-min-row)) + var(--textbox-padding-top-bottom) + var(--textbox-padding-top-bottom) + 1px + 1px); 
+	height: calc((var(--base-theme-body-font-size) * var(--base-theme-body-line-height) * var(--base-theme-form-textarea-min-row)) + 1px + 1px); 
 }
 
 input.rwd-input-file{
@@ -254,6 +252,7 @@ input.rwd-input-file::file-selector-button{
 	border-right-style: solid;
 	border-right-color: var(--theme-secondary-btn-font-color-base);
 	border-radius: 0;
+	margin-top: 0.15rem;
 	margin-left: -0.35rem;
 	margin-right: 0.75rem;
 	height: var(--base-theme-body-font-size);
