@@ -270,8 +270,15 @@ input.rwd-input-file::file-selector-button{
 	border-right-style: solid;
 	border-right-color: var(--theme-secondary-btn-font-color-base);
 	border-radius: 0;
-	height: auto;
-	line-height1: var(--base-theme-body-font-size);
+
+	
+	padding-bottom: 4px;
+	
+	vertical-align: middle;
+	display: inline-block;
+	content: "";
+	height1: var(--base-theme-form-element-min-height);
+	height:  calc(var(--base-theme-body-font-size) * var(--base-theme-body-line-height));
 }
 
 input.rwd-input-file:disabled::-webkit-file-upload-button,
