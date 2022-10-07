@@ -240,6 +240,7 @@ textarea.rwd-textarea{
 }
 
 input.rwd-input-file{
+	-webkit-appearence: none;
 	display: block;
 	background-color: var(--theme-secondary-btn-background-color-base);
 	color: var(--theme-secondary-btn-font-color-base);
@@ -249,7 +250,6 @@ input.rwd-input-file{
 
 input.rwd-input-file::-webkit-file-upload-button,
 input.rwd-input-file::file-selector-button{
-	-webkit-appearence: none;
 	border-right-width: 2px;
 	border-right-style: solid;
 	border-right-color: var(--theme-secondary-btn-font-color-base);
@@ -385,10 +385,10 @@ label.rwd-input-radio-item > input[type=radio]{
 		margin-left: 0.25rem;
 	}
 
-	.rwd-input-group button,
-	.rwd-input-group .btn{
-		margin-top: 0.05rem;
-		margin-top: 1rem;
+	.rwd-input-group > button,
+	.rwd-input-group > .btn{
+		margin-top1: 0.05rem;
+		margin-top: auto;
 	}
 
 	.rwd-input-group input.rwd-input-group-shrink-for-overlay-icon{
