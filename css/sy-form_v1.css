@@ -388,6 +388,7 @@ label.rwd-input-radio-item > input[type=radio]{
 	.rwd-input-group button,
 	.rwd-input-group .btn{
 		margin-top: 0.05rem;
+		margin-top: 1rem;
 	}
 
 	.rwd-input-group input.rwd-input-group-shrink-for-overlay-icon{
