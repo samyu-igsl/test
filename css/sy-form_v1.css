@@ -374,7 +374,7 @@ label.rwd-input-radio-item > input[type=radio]{
 .rwd-input-group{
 	display: flex;
 	flex-wrap: wrap;
-	align-items: stretch;
+	align-items: flex-start;
 	max-width: 100%;
 	width: 250px;
 }
