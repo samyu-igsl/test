@@ -110,6 +110,10 @@ div.stack-cell > textarea.rwd-textarea{
 	resize: vertical;
 }
 
+div.stack-cell > .rwd-btn{
+	margin-left: 0;
+	margin-right: 0;
+}
 
 div.stack-cell .rwd-input-checkbox-radio-item-option-extra-content{
 	width: auto;
