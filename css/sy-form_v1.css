@@ -22,14 +22,17 @@ input.rwd-input-file::file-selector-button{
 	outline: 0 none;
 	text-decoration: none;
 	display: inline-block;
-
-
 	
 	text-align: center;
 	align-items: flex-start;
 	text-transform: none;
     text-indent: 0px;
 	text-shadow: none;
+}
+
+input.rwd-input-file::-webkit-file-upload-button,
+input.rwd-input-file::file-selector-button{
+	margin: 0 0.75rem 0 -0.35rem;
 }
 
 /* Fixing the different line-height in the button and a.btn */
@@ -252,9 +255,7 @@ input.rwd-input-file::file-selector-button{
 	border-right-style: solid;
 	border-right-color: var(--theme-secondary-btn-font-color-base);
 	border-radius: 0;
-	margin-top: 0.15rem;
-	margin-left: -0.35rem;
-	margin-right: 0.75rem;
+
 	height: var(--base-theme-body-font-size);
 	line-height: var(--base-theme-body-font-size);
 }
