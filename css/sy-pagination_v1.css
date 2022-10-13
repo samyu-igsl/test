@@ -1,0 +1,227 @@
+
+
+.pagination-normal,
+.pagination-more {
+	display: none;
+	justify-content: center;
+	padding-left: 0;
+	list-style: none;
+	width: 100%;
+	text-align: center;
+	margin: 2rem auto 1rem auto;
+}
+
+@media (min-width: 768px){ 
+	.pagination-normal{
+		display: flex;
+	}
+}
+
+@media (max-width: 767.99px){ 
+	.pagination-more{
+		display: flex;
+	}
+}
+
+
+.pagination-normal a{
+	display: inline-block;
+	padding: 5px 5px;
+	min-width: 2rem;
+	margin: 0 3px;
+	text-align: center;
+	font-weight: var(--base-theme-body-font-weight-bold);
+	text-decoration: none;
+	
+	border-radius: 5px;
+	background-color: var(--theme-pagination-btn-background-color-base);
+	color: inherit;
+}
+
+.pagination-normal a:hover {
+	color: var(--theme-pagination-btn-font-color-hover);
+	background-color: var(--theme-pagination-btn-background-color-hover);
+}
+
+.pagination-normal a:active {
+	color: var(--theme-pagination-btn-font-color-active);
+	background-color: var(--theme-pagination-btn-background-color-active);
+}
+
+.pagination-normal a.currentpage{
+	color: var(--theme-pagination-btn-font-color-currentpage);
+	background-color: var(--theme-pagination-btn-background-color-currentpage);
+}
+
+.page-link-etc{
+	display: inline-block;
+	padding: 5px 5px;
+	min-width: 1rem;
+	margin: 0 3px;
+	text-align: center;
+	font-weight: var(--base-theme-body-font-weight-bold);
+}
+
+
+/* Shorthand */
+
+.page-link-first:before{
+	/* "fa-solid fa-angles-left */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f100"; 
+}
+
+.page-link-last:before{
+	/* "fa-solid fa-angles-right */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f101"; 
+}
+
+.page-link-previous:before{
+	/* "fa-solid fa-angle-left */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f104"; 
+}
+
+.page-link-next:before{
+	/* "fa-solid fa-angle-right */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f105"; 
+}
+
+.page-link-etc:before{
+	content: "...";
+}
+
+/* list header group*/
+.list-header-group {
+	display: flex;
+	padding-left: 0;
+	list-style: none;
+	width: 100%;
+	margin: 1rem auto;
+	gap: 8px;
+}
+
+.list-header-group > li:first-of-type{
+	flex-grow: 10;
+}
+
+
+.list-header-group > li:not(:first-of-type){
+	flex-basis: fit-content;
+}
+
+.list-header-group > li:before{
+	min-height: var(--base-theme-form-element-min-height);
+	line-height: var(--base-theme-form-element-min-height);
+	content: "";
+}
+
+.extendable-box{
+	position: relative;
+}
+
+.extendable-box .extendable-box-toggle-area{
+	position: absolute;
+	right: 0;
+	display: inline-block;
+	white-space: nowrap;
+	width: -moz-fit-content;
+	width: -webkit-fit-content;
+	width: fit-content;
+
+	max-width: 100%;
+}
+
+.extendable-box .extendable-box-toggle-area-content{
+	position: relative;
+	display: inline-block;
+	width: -moz-fit-content;
+	width: -webkit-fit-content;
+	width: fit-content;
+
+	max-width1: var(--base-container-safe-width);
+	padding: 1rem;
+	border-radius: 5px;
+	background-color: var(--base-theme-body-quoted-content-block-background-color);
+}
+
+
+.1extendable-box .extendable-box-toggle-area{
+	position: absolute;
+	right: 0;
+	display: inline-block;
+	white-space: nowrap;
+	width: -moz-fit-content;
+	width: -webkit-fit-content;
+	width: fit-content;
+
+	max-width: var(--base-container-safe-width);
+}
+
+.1extendable-box .extendable-box-toggle-area-content{
+	position: relative;
+	display: inline-block;
+	width: -moz-fit-content;
+	width: -webkit-fit-content;
+	width: fit-content;
+
+	max-width1: var(--base-container-safe-width);
+	padding: 1rem;
+	border-radius: 5px;
+	background-color: var(--base-theme-body-quoted-content-block-background-color);
+}
+
+
+
+
+
+.list-header-option{
+	display: flex;
+	justify-content: stretch;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+
+
+.list-header-statistic ul{
+	display: flex;
+	padding-left: 0;
+	list-style: none;
+	width: 100%;
+	margin: 0;
+}
+
+.list-header-text,
+.list-header-statistic,
+.list-header-option{
+	min-height: 2rem;
+	line-height: 1.2; /* same as h1 */
+}
+
+
+.list-header-statistic{
+	flex-basis: fit-content;
+	height: 2rem;
+}
+
+.list-header-statistic:before{
+	content: "";
+	vertical-align: middle;
+	height: 2rem;
+}
+
+	.list-header-statistic select{
+		min-width: 0;
+	}
+

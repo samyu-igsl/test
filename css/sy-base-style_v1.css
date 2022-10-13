@@ -10,14 +10,14 @@
 	--base-theme-body-smaller-font-size: 0.85rem; /* Typically browser default is "medium size" (16px * 0.85 = 13.6px) */
 	
 	/* Body and container */
-	--base-theme-body-font-color: #212529; /* Body font is always in dark grey */
+	--base-theme-body-font-color: #212530; /* Body font is always in dark grey */
 	--base-theme-body-background-color: #F4F4F4; /* Body background in grey for helping consentration in working area */
 	--base-theme-body-container-background-color: #FFF; /* The working area is always in white */
-	--base-theme-body-item-option-extra-content-background-color: #F4F4F4; /* item-option-extra-content is always in grey */
+	--base-theme-body-quoted-content-block-background-color: #F4F4F4; /* item-option-extra-content is always in grey */
 	
 	/* Text */
 	--base-theme-text-warning-font-color: #D33030;
-	
+	--base-theme-standard-margin-spacing: 1rem;
 	
 	/* Grid */
 	--base-theme-grid-card-border-color: #D9D9D9; /* Grid card border is always in grey */
@@ -44,7 +44,7 @@
 	
 	/* Badge size */
 	--base-theme-badge-height: 1.35rem;
-	--base-theme-badge-mini-height: 10px;
+	--base-theme-badge-large-height: 2rem;
 	
 	/* Do not modify unless you have calculated the contract level */
 	/* WCAG 2.1 AA required a contrast ratio at minimum 4.5:1 for text < 24px */
@@ -52,7 +52,7 @@
 	/* Badge default */
 	/* Contrast ratio at 9.6:1 */
 	--base-theme-badge-default-background-color: #CCCCCC;
-	--base-theme-badge-default-font-color: #212529;
+	--base-theme-badge-default-font-color: #212530;
 
 	/* Badge red */
 	/* Contrast ratio at 4.66:1 */
@@ -62,7 +62,7 @@
 	/* Badge yellow */
 	/* Contrast ratio at 11.07:1 */
 	--base-theme-badge-yellow-background-color: #FFD800;
-	--base-theme-badge-yellow-font-color: #212529;
+	--base-theme-badge-yellow-font-color: #212530;
 	
 	/* Badge green */
 	/* Contrast ratio at 4.58:1 */
@@ -79,7 +79,7 @@
 	/* Contrast ratio at 4.66:1 */
 	--base-theme-warning-btn-background-color-base: #D83636;
 	--base-theme-warning-btn-background-color-hover: #D83636;
-	--base-theme-warning-btn-background-color-active: #C44644;
+	--base-theme-warning-btn-background-color-active: #B72D2D;
 	--base-theme-warning-btn-font-color-base: #ffffff;
 	--base-theme-warning-btn-font-color-hover: #ffffff;
 	--base-theme-warning-btn-font-color-active: #ffffff;
@@ -139,6 +139,8 @@ p, div, section, span, label, h1, h2, h3, h4, h5, h6, th, td, button, select, in
 	min-width: 320px;
 	max-width: 100%;
 	padding: 0;
+	
+	--base-container-safe-width: 280px;
 }
 
 .container-fluid{
@@ -162,6 +164,7 @@ footer .container-fluid{
 @media (min-width: 768px){
 	.container{
 		max-width: 720px;
+		--base-container-safe-width: 320px;
 	}
 }
 
@@ -169,6 +172,7 @@ footer .container-fluid{
 @media (min-width: 992px){
 	.container{
 		max-width: 960px;
+		--base-container-safe-width: 720px;
 	}
 }
 
@@ -176,6 +180,7 @@ footer .container-fluid{
 @media (min-width: 1200px){
 	.container{
 		max-width: 1140px;
+		--base-container-safe-width: 960px;
 	}
 }
 
@@ -183,6 +188,7 @@ footer .container-fluid{
 @media (min-width: 1500px){
 	.container{
 		max-width: 1440px;
+		--base-container-safe-width: 1140px;
 	}
 }
 

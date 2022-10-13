@@ -29,11 +29,20 @@
 	/* Secondary button */
 	--theme-secondary-btn-background-color-base: #767676;
 	--theme-secondary-btn-background-color-hover: #767676;
-	--theme-secondary-btn-background-color-active: #69788E;
+	--theme-secondary-btn-background-color-active: #606060;
 	--theme-secondary-btn-font-color-base: #ffffff;
 	--theme-secondary-btn-font-color-hover: #ffffff;
 	--theme-secondary-btn-font-color-active: #ffffff;
 
+	/* Pagination button */
+	--theme-pagination-btn-background-color-base: #FFFFFF;
+	--theme-pagination-btn-background-color-hover: #E0E0E0;
+	--theme-pagination-btn-background-color-active: #004B82;
+	--theme-pagination-btn-background-color-currentpage: #1B65B5;
+	--theme-pagination-btn-font-color-base: #212530;
+	--theme-pagination-btn-font-color-hover: #212530;
+	--theme-pagination-btn-font-color-active: #ffffff;
+	--theme-pagination-btn-font-color-currentpage: #ffffff;
 	
 	/* Stacked list */
 	--theme-stacked-item-background-color: #F4F4F4;

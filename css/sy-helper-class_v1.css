@@ -1,5 +1,17 @@
 
 /**
+Standard margin spacing
+**/
+.standard-margin-spacing-after{
+	margin-bottom: var(--base-theme-standard-margin-spacing);
+}
+
+.standard-margin-spacing-before{
+	margin-top: var(--base-theme-standard-margin-spacing);
+}
+
+
+/**
 Chop text
 **/
 .chop-text{
@@ -8,6 +20,22 @@ Chop text
 	overflow-wrap: break-word !important;
 	text-overflow: ellipsis !important;
 }
+
+/**
+Text Alignment
+**/
+.text-align-left{
+	text-align: left;
+}
+
+.text-align-center{
+	text-align: center;
+}
+
+.text-align-right{
+	text-align: right;
+}
+
 
 /**
 Auto hide at responsive layout
@@ -33,7 +61,7 @@ Class: auto-hide-rwd-*
 
 /**
 Auto align center at responsive layout
-
+must put after "text-align-*"
 **/
 @media (max-width: 767.99px){ 
 	.auto-align-center-rwd-xs{
@@ -53,20 +81,6 @@ Auto align center at responsive layout
 	}
 }
 
-/**
-Text Alignment
-**/
-.text-align-left{
-	text-align: left;
-}
-
-.text-align-center{
-	text-align: center;
-}
-
-.text-align-right{
-	text-align: right;
-}
 
 /**
 Hide

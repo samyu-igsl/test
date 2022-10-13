@@ -12,7 +12,6 @@
 	margin: 0.1rem;
 	height: var(--base-theme-badge-height);
 	line-height: var(--base-theme-body-smaller-font-size);
-	display: inline-block;
 }
 
 h1 .badge:before,
@@ -27,10 +26,45 @@ h6 .badge:before{
 	height: inherit;
 }
 
+/* Large Badge */
+
+.badge-large{
+	display: inline-block;
+	font-size: var(--base-theme-body-font-size);
+	font-weight: var(--base-theme-body-font-weight-bold);
+	border-radius: 1rem;
+	border-width: 0;
+	border-style: none;
+	color: #212529;
+	padding: 0.2rem 1rem;
+	margin: 0.1rem;
+	height: var(--base-theme-badge-large-height);
+}
+
+a.badge-large-removable-mark{
+	color: inherit;
+	text-decoration: none;
+	margin-right: 0px;
+	position: relative;
+}
+
+.badge-large-removable-mark:before{
+	/* "fa-solid fa-xmark */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f00d";
+	padding: 0 0.25rem;
+	background: red;
+	position: relative;
+	left: 5px;
+}
 
 
 
-.badge{
+/* Badge color tune */
+.badge,
+.badge-large{
 	background-color: var(--base-theme-badge-default-background-color);
 	color: var(--base-theme-badge-default-font-color);
 }
@@ -55,23 +89,3 @@ h6 .badge:before{
 	color: var(--base-theme-badge-yellow-font-color);
 }
 
-.button-mini-badge-overlay {
-	content: "" !important;
-	display: inline-block;
-	position: relative;
-	top: 0;
-	right: 0;
-	border-radius: 50%;
-	border-width: 0;
-	border-style: none;
-
-	padding: 0;
-	margin: 0;
-	width: var(--base-theme-badge-mini-height);
-	height: var(--base-theme-badge-mini-height);
-	display: inline-block;
-}
-
-.badge-mini{
-	background-color: var(--base-theme-badge-default-background-color);
-}

@@ -29,6 +29,8 @@ input.rwd-input-file::file-selector-button{
 	text-transform: none;
     text-indent: 0px;
 	text-shadow: none;
+	
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 input.rwd-input-file::-webkit-file-upload-button,
@@ -105,7 +107,8 @@ input.rwd-input-file:disabled::file-selector-button{
 	--var-btn-font-color-hover: var(--base-theme-disabled-btn-font-color-hover);
 	--var-btn-font-color-active: var(--base-theme-disabled-btn-font-color-active);
 	--var-btn-text-decoration: var(--base-theme-disabled-btn-text-decoration);
-  
+	cursor: not-allowed;
+	box-shadow: none;
 }
 
 @media (max-width: 767.99px){ 
@@ -124,11 +127,11 @@ input.rwd-input-file:disabled::file-selector-button{
 	padding: 0;
 }
 
-.btn-indicator:not(.rwd-btn){
+.btn-indicator:not(.rwd-btn):not(.chop-text){
 	position: relative;
 }
 
-.btn-indicator:not(.rwd-btn):after{
+.btn-indicator:not(.rwd-btn):not(.chop-text):after{
 	content: "";
 	width: 11px;
 	height: 11px;
@@ -141,9 +144,31 @@ input.rwd-input-file:disabled::file-selector-button{
 	right: 0;
 	margin-top: -2px;
 	margin-right: -2px;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 /* Shorthand icon */
+
+/* If large badge is used together with shorthand icon */
+.badge-large[class*="btn-shorthand-"]:before{
+	margin-right: 0.5rem;
+}
+
+/* If button is used together with shorthand icon */
+button[class*="btn-shorthand-"]:not(.btn-circle):not(.rwd-input-group-overlay-icon):not(.rwd-input-group-overlay-icon-custom):before,
+.btn[class*="btn-shorthand-"]:not(.btn-circle):not(.rwd-input-group-overlay-icon):not(.rwd-input-group-overlay-icon-custom):before{
+	margin-right: 0.5rem;
+}
+
+.btn-shorthand-find:before{
+	/* "fa-solid fa-magnifying-glass */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f002"; 
+}
+
+
 .btn-shorthand-go:before{
 	/* "fa-solid fa-chevron-right */
     text-rendering: auto;
@@ -159,6 +184,39 @@ input.rwd-input-file:disabled::file-selector-button{
     font: var(--fa-font-solid);
 	content: "\f00d"; 
 }
+
+.btn-shorthand-sorting:before{
+	/* "fa-solid fa-arrow-up-wide-short */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f161"; 
+}
+
+.btn-shorthand-sorting-ascending:before{
+	/* "fa-solid fa-arrow-down-short-wide */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f884"; 
+}
+
+.btn-shorthand-sorting-decending:before{
+	/* "fa-solid fa-arrow-down-wide-short */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f160"; 
+}
+
+.btn-shorthand-ok:before{
+	/* "fa-solid fa-check */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f00c"; 
+}
+
 
 .page-action-button-area{
 	width: 100%;
@@ -230,7 +288,6 @@ textarea:read-only{
 
 select{
 	cursor: pointer;
-	min-width: 10rem;
 }
 
 /* Fix firefox selection always in grey background color */
@@ -362,7 +419,7 @@ label.rwd-input-radio-item > input[type=radio]{
 	margin-bottom: 0.5rem;
 	padding: 1rem;
 	border-radius: 5px;
-	background-color: var(--base-theme-body-item-option-extra-content-background-color);
+	background-color: var(--base-theme-body-quoted-content-block-background-color);
 }
 
 @media (max-width: 767.99px){ 
@@ -428,6 +485,7 @@ label.rwd-input-radio-item > input[type=radio]{
 			margin-top: calc((var(--base-theme-form-element-min-height) - var(--base-theme-form-overlay-icon-btn-size)) * 0.5);
 			margin-left: calc((var(--base-theme-form-overlay-icon-btn-size) + 0.5rem) * -1);
 			margin-right: 0.5rem;
+			box-shadow: none;
 		}
 
 		.rwd-input-group a.rwd-input-group-overlay-icon{
