@@ -16,9 +16,10 @@ header.page-header-strip{
 
 
 header.page-header{
+	--page-header-height: 121px;
 	max-width: 100%;
 	padding: 0;
-	height: 121px;
+	height: var(--page-header-height);
 	border-bottom-width: 1px;
 	border-bottom-color: #CCCCCC;
 	border-bottom-style: solid;
@@ -32,6 +33,11 @@ header.page-header{
 	justify-content: center;
 	align-items: center;
 	font-size: 32px;
+	display: none;
+	position: relative;
+}
+
+.header-mini-menu-panel-container{
 	display: none;
 }
 
@@ -129,11 +135,15 @@ header.page-header{
 
 @media  (max-width: 991.99px){
 	header.page-header{
-		height: 80px;
+		--page-header-height: 80px;
 	}
 	
 	.header-mini-menu-block{
 		display: flex;
+	}
+	
+	.header-mini-menu-panel-container{
+		display: block;
 	}
 	
 	.header-logo-block{
@@ -167,47 +177,9 @@ header.page-header{
 	}
 }
 
-@media (min-width: 111992px){
-	header.page-header{
-		height: 121px;
-	}
-	
-	.header-mini-menu-block{
-		display: none;
-	}
-	
-	.header-logo-block{
-		width: 220px;
-	}
-	
-	.logo-image{
-		max-width: 200px;
-		max-height: 100px;
-	}
-
-	.header-navigation-block{
-		padding-right: 0;
-	}
-	
-	.header-navigation-item{
-		width: 100px;
-	}
-
-	.header-navigation-item-icon{
-		margin-top: 20px;
-		width: 46px;
-		height: 46px;
-		font-size: 28px;
-	}
-	
-	.header-navigation-item-textholder{
-		display: flex;
-	}
-}
-
 .header-navigation-item-pulldown-menu{
 	position: absolute;
-	top: 119px;
+	top: calc(var(--page-header-height) - 2px);
 	width: 240px;
 	padding: 5px 0;
 	border-radius: 5px;
@@ -249,7 +221,7 @@ header.page-header{
 	}
 	
 	
-	.header-navigation-item-pulldown-menu-item-text:not(:first-of-type){
+	.header-navigation-item-pulldown-menu-item-text:not(:first-child){
 		border-top-width: 1px;
 		border-top-style: solid;
 		border-top-color: var(--theme-page-header-2nd-tier-menu-separator-color-base);
@@ -257,4 +229,28 @@ header.page-header{
 	
 .header-navigation-item:hover .header-navigation-item-pulldown-menu{
 	display: flex;
+}
+
+
+.header-mini-menu-panel{
+	background: #fff;
+	max-width: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.header-mini-menu-panel-item-text{
+	padding: 10px 16px;
+}
+
+.header-mini-menu-panel-item-text:not(:first-child){
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: var(--theme-page-header-2nd-tier-menu-separator-color-base);
+}
+
+.header-mini-menu-panel-item-text-indented{
+	padding-left: 48px;
 }

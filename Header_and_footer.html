@@ -26,7 +26,11 @@
 <link href="fontawesome-free-6.2.0-web/css/solid.css" rel="stylesheet">
 <link href="fontawesome-free-6.2.0-web/css/regular.css" rel="stylesheet">
 
-  
+<script>
+function toggleMiniMenu(){
+	document.getElementById('mini-menu-panel').classList.toggle('hide');
+}
+</script>
 <title>Header and Footer</title>
 <style>
 body{
@@ -39,6 +43,7 @@ body{
 </style>
 </head>
 <body onclick="return false">
+<!-- Need to put onclick="return false" in body to align iOS safari trigger "hover" event with other browsers -->
 <div class="container-fluid" style="background-color: #BFBFBF; height: 50px">
 	<div class="container"  style="background-color: #BFBFBF; height: 50px">
 		<section class="section-fluid">
@@ -57,7 +62,7 @@ body{
 </div>
 <div class="container">
 	<header class="page-header">
-		<div class="header-mini-menu-block" onclick="alert('clicked mini menu')">
+		<div class="header-mini-menu-block" onclick="toggleMiniMenu()">
 			<i class="fa-solid fa-bars"></i>
 		</div>
 		<div class="header-logo-block">
@@ -65,7 +70,7 @@ body{
 		</div>
 		<div class="header-navigation-block">
 		
-			<div class="header-navigation-item" onclick="return false">
+			<div class="header-navigation-item" onclick="alert('go to page')">
 				<div class="header-navigation-item-icon">
 					<i class="fa-solid fa-magnifying-glass"></i>
 				</div>
@@ -76,7 +81,7 @@ body{
 				</div>
 			</div>
 			
-			<div class="header-navigation-item auto-hide-rwd-s" onclick="return false">
+			<div class="header-navigation-item auto-hide-rwd-s" onclick="alert('go to page')">
 				<div class="header-navigation-item-icon">
 					<i class="fa-solid fa-book"></i>
 				</div>
@@ -87,7 +92,7 @@ body{
 				</div>
 			</div>
 			
-			<div class="header-navigation-item auto-hide-rwd-s" onclick="return false">
+			<div class="header-navigation-item auto-hide-rwd-s">
 				<div class="header-navigation-item-icon">
 					<i class="fa-solid fa-object-group"></i>
 				</div>
@@ -106,7 +111,7 @@ body{
 				</div>
 			</div>
 			
-			<div class="header-navigation-item auto-hide-rwd-s" onclick="return false">
+			<div class="header-navigation-item auto-hide-rwd-s">
 				<div class="header-navigation-item-icon">
 					<i class="fa-solid fa-object-group"></i>
 				</div>
@@ -125,7 +130,7 @@ body{
 				</div>
 			</div>
 			
-			<div class="header-navigation-item auto-hide-rwd-s" onclick="return false">
+			<div class="header-navigation-item auto-hide-rwd-s">
 				<div class="header-navigation-item-icon">
 					<i class="fa-solid fa-users-rectangle"></i>
 				</div>
@@ -144,7 +149,7 @@ body{
 				</div>
 			</div>
 			
-			<div class="header-navigation-item auto-hide-rwd-s" onclick1="return false">
+			<div class="header-navigation-item auto-hide-rwd-s">
 				<div class="header-navigation-item-icon">
 					<i class="fa-solid fa-chart-simple"></i>
 				</div>
@@ -163,7 +168,7 @@ body{
 				</div>
 			</div>
 			
-			<div class="header-navigation-item" onclick1="return false">
+			<div class="header-navigation-item">
 				<div class="header-navigation-item-icon">
 					<i class="fa-solid fa-user"></i>
 				</div>
@@ -193,7 +198,34 @@ body{
 		</div>
 	</header>
 </div>
-
+<!-- mobile menu -->
+<div class="container header-mini-menu-panel-container">
+	<section class="section-fluid">
+		<div class="header-mini-menu-panel hide" id="mini-menu-panel">
+			<a class="header-mini-menu-panel-item-text">
+			Learn
+			</a>
+			<div class="header-mini-menu-panel-item-text">
+			比較長的選單文字比較長的選單 
+			</div>
+			<a class="header-mini-menu-panel-item-text header-mini-menu-panel-item-text-indented">
+			比較長的選單文字比較長的選單
+			</a>
+			<a class="header-mini-menu-panel-item-text header-mini-menu-panel-item-text-indented">
+			比較長的選單文字比較長的選單
+			</a>
+			<a class="header-mini-menu-panel-item-text">
+			比較長的選單文字比較長的選單
+			</a>
+			<a class="header-mini-menu-panel-item-text">
+			比較長的選單文字比較長的選單
+			</a>
+			<div class="header-mini-menu-panel-item-text text-align-center">
+			<button class="btn-primary" onclick="toggleMiniMenu()">Close</button>
+			</div>
+		</div>
+	</section>
+</div>
 <!-- Breadcrumb -->
 <div class="container">
 	<section class="section-fluid">
