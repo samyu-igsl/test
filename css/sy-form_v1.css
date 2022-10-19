@@ -149,11 +149,6 @@ input.rwd-input-file:disabled::file-selector-button{
 
 /* Shorthand icon */
 
-/* If large badge is used together with shorthand icon */
-.badge-large[class*="btn-shorthand-"]:before{
-	margin-right: 0.5rem;
-}
-
 /* If button is used together with shorthand icon */
 button[class*="btn-shorthand-"]:not(.btn-circle):not(.rwd-input-group-overlay-icon):not(.rwd-input-group-overlay-icon-custom):before,
 .btn[class*="btn-shorthand-"]:not(.btn-circle):not(.rwd-input-group-overlay-icon):not(.rwd-input-group-overlay-icon-custom):before{
@@ -177,12 +172,28 @@ button[class*="btn-shorthand-"]:not(.btn-circle):not(.rwd-input-group-overlay-ic
 	content: "\f054"; 
 }
 
-.btn-shorthand-delete:before{
-	/* "fa-solid fa-chevron-right */
+.btn-shorthand-close:before{
+	/* "fa-solid fa-xmark */
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
 	content: "\f00d"; 
+}
+
+.btn-shorthand-delete:before{
+	/* "fa-solid fa-xmark */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f00d"; 
+}
+
+.btn-shorthand-filter:before{
+	/* "fa-solid fa-sliders */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f1de"; 
 }
 
 .btn-shorthand-sorting:before{
@@ -194,20 +205,37 @@ button[class*="btn-shorthand-"]:not(.btn-circle):not(.rwd-input-group-overlay-ic
 }
 
 .btn-shorthand-sorting-ascending:before{
-	/* "fa-solid fa-arrow-down-short-wide */
+	/* "fa-solid fa-arrow-up-short-wide */
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
-	content: "\f884"; 
+	content: "\f885"; 
 }
 
-.btn-shorthand-sorting-decending:before{
+.btn-shorthand-sorting-descending:before{
 	/* "fa-solid fa-arrow-down-wide-short */
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
 	content: "\f160"; 
 }
+
+.btn-shorthand-tick:before{
+	/* "fa-solid fa-check */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+	content: "\f00c"; 
+}
+
+.btn-shorthand-selection:before{
+	/* "fa-regular fa-square-check */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-regular);
+	content: "\f14a"; 
+}
+
 
 .btn-shorthand-ok:before{
 	/* "fa-solid fa-check */
@@ -400,6 +428,7 @@ label.rwd-input-radio-item{
 	display: flex;
 	align-items: top;
 	margin-bottom: 0.5rem;
+	cursor: pointer;
 }
 
 label.rwd-input-radio-item > input[type=radio]{

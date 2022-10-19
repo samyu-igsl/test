@@ -21,6 +21,10 @@ Chop text
 	text-overflow: ellipsis !important;
 }
 
+.clickable{
+	cursor: pointer;
+}
+
 /**
 Text Alignment
 **/

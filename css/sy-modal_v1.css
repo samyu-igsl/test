@@ -1,0 +1,130 @@
+
+/**
+Modal
+**/
+
+.body-no-scroll{
+	overflow: hidden;
+}
+
+.modal{
+	--modal-dialog-margin: 5vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	display1: none;
+	overflow-x: hidden;
+	overflow-y: auto;
+	outline: 0;
+}
+
+.modal-backdrop{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1001;
+	background-color: #808080;
+	opacity: 0.5;
+	width: 100%;
+	height: 100%;
+}
+
+.modal-dialog{
+	position: relative;
+	margin-top: var(--modal-dialog-margin);
+	margin-bottom: var(--modal-dialog-margin);
+	height: calc(100% - (var(--modal-dialog-margin) * 2));
+	padding: 0 10px;
+}
+
+.modal-container{
+	z-index: 1002;
+	position: relative;
+	min-width: var(--base-theme-modal-container-min-width);
+	max-height: 100%;
+	max-width: 100%;
+	height1: calc(100% - (var(--modal-container-margin) * 2));
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+	overflow-x: hidden;
+	overflow-y: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Small */
+@media (min-width: 768px){
+	.modal-container{
+		--modal-dialog-margin: 5vh;
+		max-width: 720px;
+	}
+}
+
+
+/* Medium */
+@media (min-width: 992px){
+	.modal-container{
+		--modal-dialog-margin: 5vh;
+		max-width: 960px;
+	}
+}
+
+.modal-header{
+	display: flex;
+	justify-content: space-between;
+	flex-shrink: 0;
+	padding: 20px var(--base-theme-unsafe-padding-margin) 10px var(--base-theme-unsafe-padding-margin);
+	border-bottom-color: var(--base-theme-separator-color);
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+
+.modal-header h1,
+.modal-header h2,
+.modal-header h3,
+.modal-header h4,
+.modal-header h5,
+.modal-header h6{
+	margin-bottom: 0;
+}
+
+.modal-close {
+	position: relative;
+	left: 12px;
+	top: -5px;
+	display: inline-block;
+	color: var(--base-theme-modal-close-mark-font-color);
+	font-size: 1.35rem;
+	text-align: center;
+	margin: 0;
+	padding: 0 0.5rem;
+	cursor: pointer;
+}
+
+.modal-body{
+	flex: 1 1 auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 10px var(--base-theme-unsafe-padding-margin) 10px var(--base-theme-unsafe-padding-margin);
+
+}
+
+.modal-footer{
+	flex-shrink: 0;
+	background-color: var(--base-theme-modal-footer-background-color);
+	padding: 16px var(--base-theme-unsafe-padding-margin) 16px var(--base-theme-unsafe-padding-margin);
+	border-top-color: #fff;
+	border-top-width: 2px;
+	border-top-style: solid;
+}
+
+.modal-footer button{
+	margin-bottom: 0;
+}

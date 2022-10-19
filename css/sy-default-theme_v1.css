@@ -14,6 +14,21 @@
 	--theme-footer-hyperlink-font-color-base: #FF7921;
 	--theme-footer-hyperlink-font-color-hover: #FF7921;
 	
+	/* Page header navigation bar: 1st tier menu */
+	--theme-page-header-1st-tier-menu-primary-color-base: #1B65B5;
+	--theme-page-header-1st-tier-menu-primary-color-hover: #1B65B5;
+	--theme-page-header-1st-tier-menu-background-color-base: transparent;
+	--theme-page-header-1st-tier-menu-background-color-hover: #FFF5D1;
+	--theme-page-header-1st-tier-menu-background-color-hover1: #1B65B5;
+	
+	
+	/* Page header navigation bar: 2nd tier pulldown menu */
+	--theme-page-header-2nd-tier-menu-background-color-base: #FFFFFF;
+	--theme-page-header-2nd-tier-menu-background-color-hover: #1B65B5;
+	--theme-page-header-2nd-tier-menu-font-color-base: #1B65B5;
+	--theme-page-header-2nd-tier-menu-font-color-hover: #FFFFFF;
+	--theme-page-header-2nd-tier-menu-separator-color-base: #E2E2E2;
+	
 	/* Form */
 
 	

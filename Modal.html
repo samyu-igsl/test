@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+<link href="css/sy-default-theme_v1.css" rel="stylesheet">
+<link href="css/sy-base-style_v1.css" rel="stylesheet">
+<link href="css/sy-grid-system_v1.css" rel="stylesheet">
+<link href="css/sy-stacked-list_v1.css" rel="stylesheet">
+<link href="css/sy-table_v1.css" rel="stylesheet">
+<link href="css/sy-text_and_font_v1.css" rel="stylesheet">
+<link href="css/sy-badge_v1.css" rel="stylesheet">
+<link href="css/sy-form_v1.css" rel="stylesheet">
+<link href="css/sy-pagination_v1.css" rel="stylesheet">
+<link href="css/sy-modal_v1.css" rel="stylesheet">
+<link href="css/sy-skeleton_v1.css" rel="stylesheet">
+<link href="css/sy-helper-class_v1.css" rel="stylesheet">
+
+<link href="css/x-helper.css" rel="stylesheet">
+
+<link href="fontawesome-free-6.2.0-web/css/fontawesome.css" rel="stylesheet">
+<link href="fontawesome-free-6.2.0-web/css/solid.css" rel="stylesheet">
+<link href="fontawesome-free-6.2.0-web/css/regular.css" rel="stylesheet">
+
+<script>
+
+function launchModal(id){
+	document.getElementById(id).classList.remove("hide");
+	document.body.classList.add("body-no-scroll");
+}
+
+function dismissModal(id){
+	document.getElementById(id).classList.add("hide");
+	document.body.classList.remove("body-no-scroll");
+}
+
+
+</script>
+<title>Modal</title>
+
+</head>
+<body>
+<div class="container">
+	<div class="content">
+		<h1 id="current-breakpoint">** Breakpoint: </h1>
+		<br>
+	</div>
+</div>
+
+
+<div class="container">
+	<section>
+		<h1>Modal</h1>
+		
+		<button class="btn-secondary" onclick="launchModal('modal_one')">Select One</button>
+		<button class="btn-secondary" onclick="launchModal('modal_many')">Select Many</button>
+		
+		
+	</section>
+</div>
+
+
+<div id="modal_one" class="modal hide">
+	<div class="modal-dialog">
+		<div class="modal-container">
+			<div class="modal-header">
+				<h1>Modal title - Select One</h1>
+				<span class="modal-close btn-shorthand-close" aria-label="Close" onclick="alert('close me'); dismissModal('modal_one')"></span>
+			</div>
+			<div class="modal-body">
+			
+				<div class="stacked-list standard-margin-spacing-after">
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<div class="rwd-input-group">
+									<input class="rwd-input-group-shrink-for-overlay-icon" placeholder="Search..." type="text">
+									<a class="btn rwd-input-group-overlay-icon-custom btn-shorthand-find" href="#" onclick="alert('Clicked');return false;"></a>			
+								</div>
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<button class="btn-secondary btn-circle btn-shorthand-filter" onclick="launchModal('modal_filter')"></button>
+								<label class="badge-large badge-yellow btn-shorthand-sorting-ascending clickable" onclick="launchModal('modal_sorting')">Course title</label>
+								
+								<label class="badge-large badge-green">
+									<span class="auto-hide-rwd-xs">Availability status: </span>
+									Available
+									<a class="badge-large-removable-mark" onclick="alert('Clicked');return false;"></a>
+								</label>
+								<label class="badge-large badge-green">
+									<span class="auto-hide-rwd-xs">Category: </span>
+									Staff Orientation
+									<a class="badge-large-removable-mark" onclick="alert('Clicked');return false;"></a>
+								</label>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="stacked-list stacked-with-style-in-block stacked-list-hover-effect">
+					<div class="stacked-list-side-column hide">
+						<h1 class="no-margin"><input type="checkbox"></h1>
+					</div>
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell"><h1 class="no-margin">Course Title</h1>ABCD-1234-5678</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-2">
+							<div class="stack-cell">
+								<label class="text-block-label">Learning Group</label>
+								Training and Development
+							</div>
+							<div class="stack-cell">
+								<label class="text-block-label">Category</label>
+								Staff Orientation
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<label class="badge badge-blue1">Available</label>
+							</div>
+						</div>
+					</div>
+					<div class="stacked-list-side-column stacked-list-side-button-area">
+						<button type="button" class="btn-circle btn-primary btn-shorthand-tick"></button>
+					</div>
+				</div>
+
+				<div class="stacked-list stacked-with-style-in-block stacked-list-hover-effect">
+					<div class="stacked-list-side-column hide">
+						<h1 class="no-margin"><input type="checkbox"></h1>
+					</div>
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell"><h1 class="no-margin">Course Title</h1>ABCD-1234-5678</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-2">
+							<div class="stack-cell">
+								<label class="text-block-label">Learning Group</label>
+								Training and Development
+							</div>
+							<div class="stack-cell">
+								<label class="text-block-label">Category</label>
+								Staff Orientation
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<label class="badge badge-blue1">Available</label>
+							</div>
+						</div>
+					</div>
+					<div class="stacked-list-side-column stacked-list-side-button-area">
+						<button type="button" class="btn-circle btn-primary btn-shorthand-tick"></button>
+					</div>
+				</div>
+				
+				<div class="stacked-list stacked-with-style-in-block stacked-list-hover-effect">
+					<div class="stacked-list-side-column hide">
+						<h1 class="no-margin"><input type="checkbox"></h1>
+					</div>
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell"><h1 class="no-margin">Course Title</h1>ABCD-1234-5678</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-2">
+							<div class="stack-cell">
+								<label class="text-block-label">Learning Group</label>
+								Training and Development
+							</div>
+							<div class="stack-cell">
+								<label class="text-block-label">Category</label>
+								Staff Orientation
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<label class="badge badge-blue1">Available</label>
+							</div>
+						</div>
+					</div>
+					<div class="stacked-list-side-column stacked-list-side-button-area">
+						<button type="button" class="btn-circle btn-primary btn-shorthand-tick"></button>
+					</div>
+				</div>
+
+				<div class="text-align-center standard-margin-spacing-before standard-margin-spacing-after">
+				#1000 - 1010. Total 99999 Record(s).
+				</div>
+						
+				<nav class="rwd-pagination" aria-label="Page navigation">
+					<ul class="pagination-normal">
+						<li><a class="page-link-first hide" href="#" aria-label="First page"></a></li>
+						<li><a class="page-link-previous" href="#" aria-label="Previous page"></a></li>
+						<li><a class="page-link-item" href="#">1</a></li>
+						<li><span class="page-link-etc" href="#"></span></li>
+						<li><a class="page-link-item" href="#">5001</a></li>
+						<li><a class="page-link-item" href="#">5002</a></li>
+						<li><a class="page-link-item currentpage" href="#">5003</a></li>
+						<li><a class="page-link-item" href="#">5004</a></li>
+						<li><a class="page-link-item" href="#">5005</a></li>
+						<li><span class="page-link-etc" href="#"></span></li>
+						<li><a class="page-link-item" href="#">9999</a></li>
+						<li><a class="page-link-next" href="#" aria-label="Next page"></a></li>
+						<li><a class="page-link-last hide" href="#" aria-label="Last page"></a></li>
+					</ul>
+					<ul class="pagination-more">
+						<li><button class="btn-primary">More</button></li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+	</div>
+	<div class="modal-backdrop"></div>
+</div>
+
+<div id="modal_many" class="modal hide">
+	<div class="modal-dialog">
+		<div class="modal-container">
+			<div class="modal-header">
+				<h1>Modal title - Select Many</h1>
+				<span class="modal-close btn-shorthand-close" aria-label="Close" onclick="alert('close me'); dismissModal('modal_many')"></span>
+			</div>
+			<div class="modal-body">
+			
+				<div class="stacked-list standard-margin-spacing-after">
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<div class="rwd-input-group">
+									<input class="rwd-input-group-shrink-for-overlay-icon" placeholder="Search..." type="text">
+									<a class="btn rwd-input-group-overlay-icon-custom btn-shorthand-find" href="#" onclick="alert('Clicked');return false;"></a>			
+								</div>
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<button class="btn-secondary btn-circle btn-shorthand-selection" onclick="alert('Select all/none')"></button>
+								<button class="btn-secondary btn-circle btn-shorthand-filter" onclick="launchModal('modal_filter')"></button>
+								<label class="badge-large badge-yellow btn-shorthand-sorting-ascending clickable" onclick="launchModal('modal_sorting')">Course title</label>
+								
+								<label class="badge-large badge-green">
+									<span class="auto-hide-rwd-xs">Availability status: </span>
+									Available
+									<a class="badge-large-removable-mark" onclick="alert('Clicked');return false;"></a>
+								</label>
+								<label class="badge-large badge-green">
+									<span class="auto-hide-rwd-xs">Category: </span>
+									Staff Orientation
+									<a class="badge-large-removable-mark" onclick="alert('Clicked');return false;"></a>
+								</label>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="stacked-list stacked-with-style-in-block stacked-list-hover-effect">
+					<div class="stacked-list-side-column">
+						<h1 class="no-margin"><input type="checkbox"></h1>
+					</div>
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell"><h1 class="no-margin">Course Title</h1>ABCD-1234-5678</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-2">
+							<div class="stack-cell">
+								<label class="text-block-label">Learning Group</label>
+								Training and Development
+							</div>
+							<div class="stack-cell">
+								<label class="text-block-label">Category</label>
+								Staff Orientation
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<label class="badge badge-blue1">Available</label>
+							</div>
+						</div>
+					</div>
+					<div class="stacked-list-side-column stacked-list-side-button-area hide">
+						<button type="button" class="btn-circle btn-primary btn-shorthand-tick"></button>
+					</div>
+				</div>
+
+				<div class="stacked-list stacked-with-style-in-block stacked-list-hover-effect">
+					<div class="stacked-list-side-column">
+						<h1 class="no-margin"><input type="checkbox"></h1>
+					</div>
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell"><h1 class="no-margin">Course Title</h1>ABCD-1234-5678</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-2">
+							<div class="stack-cell">
+								<label class="text-block-label">Learning Group</label>
+								Training and Development
+							</div>
+							<div class="stack-cell">
+								<label class="text-block-label">Category</label>
+								Staff Orientation
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<label class="badge badge-blue1">Available</label>
+							</div>
+						</div>
+					</div>
+					<div class="stacked-list-side-column stacked-list-side-button-area hide">
+						<button type="button" class="btn-circle btn-primary btn-shorthand-tick"></button>
+					</div>
+				</div>
+				
+				<div class="stacked-list stacked-with-style-in-block stacked-list-hover-effect">
+					<div class="stacked-list-side-column">
+						<h1 class="no-margin"><input type="checkbox"></h1>
+					</div>
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell"><h1 class="no-margin">Course Title</h1>ABCD-1234-5678</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-2">
+							<div class="stack-cell">
+								<label class="text-block-label">Learning Group</label>
+								Training and Development
+							</div>
+							<div class="stack-cell">
+								<label class="text-block-label">Category</label>
+								Staff Orientation
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell">
+								<label class="badge badge-blue1">Available</label>
+							</div>
+						</div>
+					</div>
+					<div class="stacked-list-side-column stacked-list-side-button-area hide">
+						<button type="button" class="btn-circle btn-primary btn-shorthand-tick"></button>
+					</div>
+				</div>
+
+				<div class="text-align-center standard-margin-spacing-before standard-margin-spacing-after">
+				#1000 - 1010. Total 99999 Record(s).
+				</div>
+						
+				<nav class="rwd-pagination" aria-label="Page navigation">
+					<ul class="pagination-normal">
+						<li><a class="page-link-first hide" href="#" aria-label="First page"></a></li>
+						<li><a class="page-link-previous" href="#" aria-label="Previous page"></a></li>
+						<li><a class="page-link-item" href="#">1</a></li>
+						<li><span class="page-link-etc" href="#"></span></li>
+						<li><a class="page-link-item" href="#">5001</a></li>
+						<li><a class="page-link-item" href="#">5002</a></li>
+						<li><a class="page-link-item currentpage" href="#">5003</a></li>
+						<li><a class="page-link-item" href="#">5004</a></li>
+						<li><a class="page-link-item" href="#">5005</a></li>
+						<li><span class="page-link-etc" href="#"></span></li>
+						<li><a class="page-link-item" href="#">9999</a></li>
+						<li><a class="page-link-next" href="#" aria-label="Next page"></a></li>
+						<li><a class="page-link-last hide" href="#" aria-label="Last page"></a></li>
+					</ul>
+					<ul class="pagination-more">
+						<li><button class="btn-primary">More</button></li>
+					</ul>
+				</nav>
+
+			</div>
+			<div class="modal-footer text-align-center">
+				<button class="btn-primary" onclick="alert('Check at least one selected')">Select</<button>
+				<button class="btn-secondary" onclick="dismissModal('modal_many')">Cancel</<button>
+			</div>
+		</div>
+	</div>
+	<div class="modal-backdrop"></div>
+</div>
+
+<div id="modal_sorting" class="modal hide">
+	<div class="modal-dialog">
+		<div class="modal-container">
+			<div class="modal-header">
+				<h1>Sorting</h1>
+				<span class="modal-close btn-shorthand-close" aria-label="Close" onclick="alert('close me'); dismissModal('modal_sorting')"></span>
+			</div>
+			<div class="modal-body">
+			
+				<label class="text-block-label">Order by</label>
+				<label class="rwd-input-radio-item"><input type="radio" name="order_by" checked>Course title</label>
+				<label class="rwd-input-radio-item"><input type="radio" name="order_by">Availabile date</label>
+				<label class="rwd-input-radio-item"><input type="radio" name="order_by">Category</label>
+				<label class="rwd-input-radio-item"><input type="radio" name="order_by">Any...</label>
+				<label class="rwd-input-radio-item"><input type="radio" name="order_by">Thing...</label>
+				
+				
+				<label class="text-block-label">Order sequence</label>
+				<label class="rwd-input-radio-item"><input type="radio" name="order_sequence" checked>Ascending</label>
+				<label class="rwd-input-radio-item"><input type="radio" name="order_sequence">Descending</label>
+				
+			</div>
+			<div class="modal-footer text-align-center">
+					<button class="btn-primary" onclick="dismissModal('modal_sorting')">Apply</<button>
+					<button class="btn-secondary" onclick="dismissModal('modal_sorting')">Cancel</<button>
+			</div>
+		</div>
+	</div>
+	<div class="modal-backdrop"></div>
+</div>
+
+<div id="modal_filter" class="modal hide">
+	<div class="modal-dialog">
+		<div class="modal-container">
+			<div class="modal-header">
+				<h1>Sorting</h1>
+				<span class="modal-close btn-shorthand-close" aria-label="Close" onclick="alert('close me'); dismissModal('modal_filter')"></span>
+			</div>
+			<div class="modal-body">
+			
+				<label class="text-block-label">Category</label>
+				<select class="rwd-select">
+					<option>Category 1</option>
+					<option>Category 2</option>
+					<option>Category 3</option>
+				</select>
+				
+				<label class="text-block-label">Availability status</label>
+				<select class="rwd-select">
+					<option>All</option>
+					<option>Available</option>
+					<option>Not available</option>
+				</select>
+				
+				<label class="text-block-label">Available date</label>
+				<div class="rwd-input-group" style="width: 500px">
+					<input class="rwd-input-group-shrink-for-overlay-icon" type="text" placeholder="From">
+					<a class="btn rwd-input-group-overlay-icon-custom" href="#" onclick="alert('Clicked');return false;"><i class="fa-solid fa-calendar"></i></a>	
+					<input class="rwd-input-group-shrink-for-overlay-icon" type="text" placeholder="To">
+					<a class="btn rwd-input-group-overlay-icon-custom" href="#" onclick="alert('Clicked');return false;"><i class="fa-solid fa-calendar"></i></a>			
+				</div>
+		
+				
+			</div>
+			<div class="modal-footer text-align-center">
+					<button class="btn-primary" onclick="dismissModal('modal_filter')">Apply</<button>
+					<button class="btn-secondary" onclick="dismissModal('modal_filter')">Cancel</<button>
+			</div>
+		</div>
+	</div>
+	<div class="modal-backdrop"></div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+<link href="css/sy-default-theme_v1.css" rel="stylesheet">
+<link href="css/sy-base-style_v1.css" rel="stylesheet">
+<link href="css/sy-page-header_v1.css" rel="stylesheet">
+<link href="css/sy-grid-system_v1.css" rel="stylesheet">
+<link href="css/sy-stacked-list_v1.css" rel="stylesheet">
+<link href="css/sy-table_v1.css" rel="stylesheet">
+<link href="css/sy-text_and_font_v1.css" rel="stylesheet">
+<link href="css/sy-form_v1.css" rel="stylesheet">
+<link href="css/sy-pagination_v1.css" rel="stylesheet">
+<link href="css/sy-skeleton_v1.css" rel="stylesheet">
+<link href="css/sy-badge_v1.css" rel="stylesheet">
+<link href="css/sy-helper-class_v1.css" rel="stylesheet">
+
+<link href="css/x-helper.css" rel="stylesheet">
+
+<link href="fontawesome-free-6.2.0-web/css/fontawesome.css" rel="stylesheet">
+<link href="fontawesome-free-6.2.0-web/css/solid.css" rel="stylesheet">
+<link href="fontawesome-free-6.2.0-web/css/regular.css" rel="stylesheet">
+
+  
+<title>Header and Footer</title>
+<style>
+body{
+	background-image: url('images/backdrop-2.jpg');
+	background-image: url('images/backdrop.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid" style="background-color: #BFBFBF; height: 50px">
+	<div class="container"  style="background-color: #BFBFBF; height: 50px">
+		<section class="section-fluid">
+			<div style="width: 100%;">
+				<h1 id="current-breakpoint">** Breakpoint: </h1>
+			</div>
+		</section>
+	</div>
+</div>
+<div class="container hide1">
+	<header class="page-header-strip auto-hide-rwd-s">
+		<!-- Allow put custom image -->
+		<img class="page-header-strip-by-image hide1" src="images/top_image.png">
+		<div class="page-header-strip-by-plain-color hide" style="background-color: #ccc"></div>
+	</header>
+</div>
+<div class="container">
+	<header class="page-header">
+		<div class="header-mini-menu-block" onclick="alert('clicked mini menu')">
+			<i class="fa-solid fa-bars"></i>
+		</div>
+		<div class="header-logo-block">
+			<img class="logo-image clickable" src="images/logo_200x100.png" alt="logo" onclick="alert('clicked logo')">
+		</div>
+		<div class="header-navigation-block">
+		
+			<div class="header-navigation-item">
+				<div class="header-navigation-item-icon">
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</div>
+				<div class="header-navigation-item-textholder">
+					<div class="header-navigation-item-text">
+					Search
+					</div>
+				</div>
+			</div>
+			
+			<div class="header-navigation-item auto-hide-rwd-s">
+				<div class="header-navigation-item-icon">
+					<i class="fa-solid fa-book"></i>
+				</div>
+				<div class="header-navigation-item-textholder">
+					<div class="header-navigation-item-text">
+					Learn
+					</div>
+				</div>
+			</div>
+			
+			<div class="header-navigation-item auto-hide-rwd-s">
+				<div class="header-navigation-item-icon">
+					<i class="fa-solid fa-object-group"></i>
+				</div>
+				<div class="header-navigation-item-textholder">
+					<div class="header-navigation-item-text">
+					比較長的選單文字比較長的選單
+					</div>
+				</div>
+				<div class="header-navigation-item-pulldown-menu">
+					<a class="header-navigation-item-pulldown-menu-item-text">
+					Item 1
+					</a>
+					<a class="header-navigation-item-pulldown-menu-item-text">
+					Item 2
+					</a>
+				</div>
+			</div>
+			
+			<div class="header-navigation-item auto-hide-rwd-s">
+				<div class="header-navigation-item-icon">
+					<i class="fa-solid fa-object-group"></i>
+				</div>
+				<div class="header-navigation-item-textholder">
+					<div class="header-navigation-item-text">
+					比較長的選單文字比較長的選單
+					</div>
+				</div>
+				<div class="header-navigation-item-pulldown-menu">
+					<a class="header-navigation-item-pulldown-menu-item-text">
+					Item 1
+					</a>
+					<a class="header-navigation-item-pulldown-menu-item-text">
+					Item 2
+					</a>
+				</div>
+			</div>
+			
+			<div class="header-navigation-item auto-hide-rwd-s">
+				<div class="header-navigation-item-icon">
+					<i class="fa-solid fa-users-rectangle"></i>
+				</div>
+				<div class="header-navigation-item-textholder">
+					<div class="header-navigation-item-text">
+					比較長的選單文字比較長的選單
+					</div>
+				</div>
+				<div class="header-navigation-item-pulldown-menu">
+					<a class="header-navigation-item-pulldown-menu-item-text">
+					Item 1
+					</a>
+					<a class="header-navigation-item-pulldown-menu-item-text">
+					Item 2
+					</a>
+				</div>
+			</div>
+			
+			<div class="header-navigation-item auto-hide-rwd-s">
+				<div class="header-navigation-item-icon">
+					<i class="fa-solid fa-chart-simple"></i>
+				</div>
+				<div class="header-navigation-item-textholder">
+					<div class="header-navigation-item-text">
+					User Management
+					</div>
+				</div>
+				<div class="header-navigation-item-pulldown-menu">
+					<a class="header-navigation-item-pulldown-menu-item-text">
+					Item 1
+					</a>
+					<a class="header-navigation-item-pulldown-menu-item-text">
+					Item 2
+					</a>
+				</div>
+			</div>
+			
+			<div class="header-navigation-item">
+				<div class="header-navigation-item-icon">
+					<i class="fa-solid fa-user"></i>
+				</div>
+				<div class="header-navigation-item-textholder">
+					<div class="header-navigation-item-text">
+					User
+					</div>
+				</div>
+				<div class="header-navigation-item-pulldown-menu">
+					<a class="header-navigation-item-pulldown-menu-item-text" href="#">
+					Message box <label class="badge badge-red" style="">99+</label>
+					</a>
+					<a class="header-navigation-item-pulldown-menu-item-text" href="#">
+					Change password
+					</a>
+					<a class="header-navigation-item-pulldown-menu-item-text" href="#">
+					User preference
+					</a>
+					<a class="header-navigation-item-pulldown-menu-item-text" href="#">
+					Administration
+					</a>
+					<a class="header-navigation-item-pulldown-menu-item-text" href="#">
+					Sign out
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+
+<!-- Breadcrumb -->
+<div class="container">
+	<section class="section-fluid">
+		<div class="breadcrumb-bar">
+			<div class="breadcrumb-bar-left">
+			<i class="fa-solid fa-arrow-left"></i> Back to home
+			</div>
+			<div class="breadcrumb-bar-right">
+			123
+			</div>
+		</div>
+	</section>
+</div>
+
+<div class="container-fluid hide">
+	<section class="section-fluid">
+		<div style="width: 100%; display: flex; overflow: hidden; justify-content: center">
+			<img style="display: block; " src="images/test_banner_1920x400.png" alt="image">
+		</div>
+	</section>
+</div>
+<div class="container hide1" style="background-color: grey; height: 400px">
+	<section class="section-fluid">
+		<div style="width: 100%; display: flex; overflow: hidden; justify-content: center">
+			Fit content Slideshow
+		</div>
+	</section>
+</div>
+
+<div class="container-fluid hide" style="background-color: grey; height: 400px">
+	<section class="section-fluid">
+		<div style="width: 100%; display: flex; overflow: hidden; justify-content: center">
+			Full width Slideshow
+		</div>
+	</section>
+</div>
+<div class="container">
+	<section>
+		<h1>Information</h1>
+	</section>
+</div>
+
+
+</body>
+</html>

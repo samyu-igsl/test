@@ -9,11 +9,18 @@
 	
 	--base-theme-body-smaller-font-size: 0.85rem; /* Typically browser default is "medium size" (16px * 0.85 = 13.6px) */
 	
+	--base-theme-header-nav-font-size: 0.875rem;
+	--base-theme-header-nav-font-weight: 400; /* Regular */
+	--base-theme-header-nav-line-height: 1.5;
+	
 	/* Body and container */
+	--base-theme-container-min-width: 320px;
+	--base-theme-modal-container-min-width: 310px;
 	--base-theme-body-font-color: #212530; /* Body font is always in dark grey */
 	--base-theme-body-background-color: #F4F4F4; /* Body background in grey for helping consentration in working area */
 	--base-theme-body-container-background-color: #FFF; /* The working area is always in white */
 	--base-theme-body-quoted-content-block-background-color: #F4F4F4; /* item-option-extra-content is always in grey */
+	
 	
 	/* Text */
 	--base-theme-text-warning-font-color: #D33030;
@@ -95,6 +102,12 @@
 	--base-theme-disabled-btn-font-color-hover: #9E9E9E;
 	--base-theme-disabled-btn-font-color-active: #9E9E9E;
 	
+	/* Option block */
+	--base-theme-body-option-block-background-color: #FFF5D1;
+	
+	/* Modal close mark */
+	--base-theme-modal-close-mark-font-color: #D83636;
+	--base-theme-modal-footer-background-color: #F4F4F4; /* Body background in grey for helping consentration in working area */
 }
 
 *,
@@ -113,10 +126,6 @@ body{
 	background-color: var(--base-theme-body-background-color);
 }
 
-header{
-	
-}
-
 footer{
 	color: var(--theme-footer-font-color);
 	background-color: var(--theme-footer-background-color);
@@ -130,17 +139,14 @@ p, div, section, span, label, h1, h2, h3, h4, h5, h6, th, td, button, select, in
 	line-height: inherit;
 }
 
-
 /* Containers & Breakpoints */
 /* Base style */
 .container{
 	margin-right: auto;
 	margin-left: auto;
-	min-width: 320px;
+	min-width: var(--base-theme-container-min-width);
 	max-width: 100%;
 	padding: 0;
-	
-	--base-container-safe-width: 280px;
 }
 
 .container-fluid{
@@ -164,7 +170,6 @@ footer .container-fluid{
 @media (min-width: 768px){
 	.container{
 		max-width: 720px;
-		--base-container-safe-width: 320px;
 	}
 }
 
@@ -172,7 +177,6 @@ footer .container-fluid{
 @media (min-width: 992px){
 	.container{
 		max-width: 960px;
-		--base-container-safe-width: 720px;
 	}
 }
 
@@ -180,7 +184,6 @@ footer .container-fluid{
 @media (min-width: 1200px){
 	.container{
 		max-width: 1140px;
-		--base-container-safe-width: 960px;
 	}
 }
 
@@ -188,7 +191,6 @@ footer .container-fluid{
 @media (min-width: 1500px){
 	.container{
 		max-width: 1440px;
-		--base-container-safe-width: 1140px;
 	}
 }
 
@@ -218,14 +220,22 @@ footer .container-fluid{
 
 /* Section content */
 section{
-  max-width: 100%;
-  padding: var(--base-theme-unsafe-padding-margin);
+	max-width: 100%;
+}
+
+section:not(.section-fluid){
+	padding: var(--base-theme-unsafe-padding-margin);
+}
+
+section.section-footer{
+	/* For Footer */
+	/* TBD */
 }
 
 section.section-fluid{
-  max-width: 100%;
-  padding: 0;
+	padding: 0;
 }
+
 
 /* Session wrapper */
 div.session-wrapper{
@@ -303,3 +313,19 @@ section~section {
 	padding-top: 0;
 }
 
+/* Section content */
+.breadcrumb-bar{
+	padding: 0 var(--base-theme-unsafe-padding-margin);
+	height: 40px;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #1B65B5;
+	color: #fff;
+}
+
+.breadcrumb-bar-left{
+	
+}

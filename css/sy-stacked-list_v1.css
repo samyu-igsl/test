@@ -15,9 +15,6 @@
 		/*border-bottom: 2px solid transparent;*/
 	}
 
-	.stacked-with-style-in-separator.stacked-list:hover{
-		background-color: var(--theme-stacked-item-background-color-hover);
-	}
 
 
 .stacked-with-style-in-block.stacked-list{
@@ -27,10 +24,10 @@
 	border-radius: 5px;
 }
 
-	.stacked-with-style-in-block.stacked-list:hover{
-		background-color: var(--theme-stacked-item-background-color-hover);
-	}
-	
+.stacked-list-hover-effect:hover{
+	background-color: var(--theme-stacked-item-background-color-hover);
+}
+
 	
 .stacked-list-side-column{
 	display: block;

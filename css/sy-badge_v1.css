@@ -8,12 +8,13 @@
 	border-width: 0;
 	border-style: none;
 	color: #212529;
-	padding: 0.2rem 1rem;
+	padding: 0.2rem 0.75rem;
 	margin: 0.1rem;
 	height: var(--base-theme-badge-height);
 	line-height: var(--base-theme-body-smaller-font-size);
 }
 
+/*
 h1 .badge:before,
 h2 .badge:before,
 h3 .badge:before,
@@ -24,6 +25,13 @@ h6 .badge:before{
 	vertical-align: middle;
 	display: inline-block;
 	height: inherit;
+	margin: 0;
+}
+*/
+
+/* remove margin if using inside a tag */
+a .badge{
+	margin: 0;
 }
 
 /* Large Badge */
@@ -41,26 +49,33 @@ h6 .badge:before{
 	height: var(--base-theme-badge-large-height);
 }
 
+/* If large badge is used together with shorthand icon */
+.badge-large[class*="btn-shorthand-"]:before{
+	display: inline-block;
+	margin-right: 0.5rem;
+}
+
 a.badge-large-removable-mark{
+	display: inline-block;
 	color: inherit;
 	text-decoration: none;
 	margin-right: 0px;
 	position: relative;
+	left: 7px;
 }
 
 .badge-large-removable-mark:before{
+	display: inline-block;
 	/* "fa-solid fa-xmark */
+	border-radius: 50%;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font: var(--fa-font-solid);
 	content: "\f00d";
 	padding: 0 0.25rem;
-	background: red;
 	position: relative;
-	left: 5px;
+	
 }
-
-
 
 /* Badge color tune */
 .badge,
@@ -88,4 +103,3 @@ a.badge-large-removable-mark{
 	background-color: var(--base-theme-badge-yellow-background-color);
 	color: var(--base-theme-badge-yellow-font-color);
 }
-
