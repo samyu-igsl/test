@@ -75,6 +75,7 @@ header.page-header{
 	position: relative;
 	background-color: var(--theme-page-header-1st-tier-menu-background-color-base);
 	color: var(--theme-page-header-1st-tier-menu-primary-color-base);
+	text-decoration: none;
 }
 
 .header-navigation-item:hover{
@@ -117,6 +118,7 @@ header.page-header{
 	line-height: var(--base-theme-header-nav-line-height);
 	overflow-wrap: break-word;
 	overflow-y: hidden !important;
+	
 	
 	display: -webkit-box !important;
 	-webkit-line-clamp: var(--nav-text-max-row);
