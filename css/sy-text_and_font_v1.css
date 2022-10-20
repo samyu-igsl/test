@@ -38,31 +38,29 @@ p {
 
 
 /* Hyperlink */
-a{
+a:not([class*="link-"]){
 	color: var(--theme-body-hyperlink-font-color-base);
 	text-decoration: underline;
 	cursor: pointer;
 }
 
-a:hover {
+a:not([class*="link-"]):hover {
 	color: var(--theme-body-hyperlink-font-color-hover);
 	text-decoration: none;
 }
 
 
-footer a{
+footer a:not([class*="link-"]){
 	color: var(--theme-footer-hyperlink-font-color-base);
 }
 
-footer a:hover {
+footer a:not([class*="link-"]):hover {
 	color: var(--theme-footer-hyperlink-font-color-hover);
 	text-decoration: none;
 }
 
 a.link-anchor,
-a.link-anchor:hover,
-footer a.link-anchor,
-footer a.link-anchor:hover{
+a.link-anchor:hover{
 	color: inherit;
 	text-decoration: inherit;
 	cursor: inherit;

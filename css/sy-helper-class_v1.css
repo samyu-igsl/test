@@ -10,6 +10,18 @@ Standard margin spacing
 	margin-top: var(--base-theme-standard-margin-spacing);
 }
 
+/**
+Standard margin spacing in padding version
+**/
+.standard-padding-spacing-after{
+	padding-bottom: var(--base-theme-standard-margin-spacing);
+}
+
+.standard-padding-spacing-before{
+	padding-top: var(--base-theme-standard-margin-spacing);
+}
+
+
 
 /**
 Chop text

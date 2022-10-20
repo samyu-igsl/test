@@ -159,12 +159,6 @@ p, div, section, span, label, h1, h2, h3, h4, h5, h6, th, td, button, select, in
 	background-color: var(--base-theme-body-container-background-color);
 }
 
-footer .container,
-footer .container-fluid{
-	color: var(--theme-footer-font-color);
-	background-color: var(--theme-footer-container-background-color);
-}
-
 
 /* Small */
 @media (min-width: 768px){
@@ -227,17 +221,17 @@ section:not(.section-fluid){
 	padding: var(--base-theme-unsafe-padding-margin);
 }
 
-section.section-footer{
-	/* For Footer */
-	/* TBD */
-}
-
 section.section-fluid{
 	padding: 0;
 }
 
+/* Remove duplicated padding for continuous sections */ 
+section:not(.section-fluid)~section:not(.section-fluid) {
+	padding-top: 0;
+}
 
 /* Session wrapper */
+/* Must use div */
 div.session-wrapper{
 	width: 100%;
 	margin: 0;
@@ -308,24 +302,4 @@ div.session-wrapper-menu-on-right{
 	padding: 0;
 }
 
-/* Remove duplicated padding for continuous sections */ 
-section~section {
-	padding-top: 0;
-}
 
-/* Section content */
-.breadcrumb-bar{
-	padding: 0 var(--base-theme-unsafe-padding-margin);
-	height: 40px;
-	width: 100%;
-	overflow: hidden;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #1B65B5;
-	color: #fff;
-}
-
-.breadcrumb-bar-left{
-	
-}

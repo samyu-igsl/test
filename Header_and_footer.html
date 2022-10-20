@@ -42,7 +42,7 @@ body{
 }
 </style>
 </head>
-<body onclick="return false">
+<body onclick="void(0)">
 <!-- Need to put onclick="return false" in body to align iOS safari trigger "hover" event with other browsers -->
 <div class="container-fluid" style="background-color: #BFBFBF; height: 50px">
 	<div class="container"  style="background-color: #BFBFBF; height: 50px">
@@ -206,7 +206,7 @@ body{
 			Learn
 			</a>
 			<div class="header-mini-menu-panel-item-text">
-			比較長的選單文字比較長的選單 
+			比較長的選單文字比較長的選單
 			</div>
 			<a class="header-mini-menu-panel-item-text header-mini-menu-panel-item-text-indented">
 			比較長的選單文字比較長的選單
@@ -231,10 +231,10 @@ body{
 	<section class="section-fluid">
 		<div class="breadcrumb-bar">
 			<div class="breadcrumb-bar-left">
-			<i class="fa-solid fa-arrow-left"></i> Back to home
+				<a class="link-breadcrumb"><i class="fa-solid fa-arrow-left"></i> Back</a>
 			</div>
-			<div class="breadcrumb-bar-right">
-			123
+			<div class="breadcrumb-bar-right auto-hide-rwd-xs">
+			Record name | Page name
 			</div>
 		</div>
 	</section>
@@ -268,6 +268,41 @@ body{
 	</section>
 </div>
 
+
+<div class="container-fluid">
+	<footer class="page-footer">
+		<div class="container">
+			<section>
+				<div class="stacked-list">
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell text-align-right">
+								<a href="#" onclick="alert('scroll-to-top')"><i class="fa-solid fa-arrow-up"></i> Back to top</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h1>Footer</h1>
+				<p>
+				This is <a href="">hyperlink</a> in footer. This is <a class="link-anchor" name="anchor">anchor</a> only in footer.
+				</p>
+			</section>
+		</div>
+	</footer>
+</div>
+
+
+<div class="container-fluid" style="background-color: #BFBFBF; height: 50px">
+	<div class="container"  style="background-color: #BFBFBF; height: 50px">
+		<section class="section-fluid">
+			<div style="width: 100%;">
+				<h1 id="current-breakpoint">** Breakpoint: </h1>
+			</div>
+		</section>
+	</div>
+</div>
 
 </body>
 </html>

@@ -45,8 +45,6 @@
 */
 
 .grid-card{
-
-	border: 1px solid var(--base-theme-grid-card-border-color);
 	border-radius: 5px;
 	padding: 10px;
 	/*min-height: 4rem;*/
@@ -54,6 +52,10 @@
 	overflow-wrap: break-word;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.grid-card:not(.grid-card-borderless){
+	border: 1px solid var(--base-theme-grid-card-border-color);
 }
 
 .grid-card-body{
