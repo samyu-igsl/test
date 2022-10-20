@@ -104,3 +104,8 @@ Hide
 .hide{
 	display: none !important;
 }
+
+.sticky{
+	position: sticky;
+	top: 0;
+}

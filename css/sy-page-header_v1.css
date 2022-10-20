@@ -280,8 +280,17 @@ footer.page-footer .container{
 	font-size: var(--base-theme-body-smaller-font-size);
 }
 
-.breadcrumb-bar-left{
+.breadcrumb-bar-back-block{
+	min-width: 80px;
+	margin-right: 2rem;
+}
+
+.breadcrumb-bar-title-block{
 	min-width: 100px;
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	overflow-wrap: break-word !important;
+	text-overflow: ellipsis !important;
 }
 
 a.link-breadcrumb{
