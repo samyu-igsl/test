@@ -23,6 +23,10 @@ header.page-header{
 	border-bottom-width: 1px;
 	border-bottom-color: #CCCCCC;
 	border-bottom-style: solid;
+	
+	/* Prevent sticky breadcrumb covered */
+	position: relative;
+	z-index: 1;
 }
 
 .header-mini-menu-block{
@@ -125,7 +129,6 @@ header.page-header{
 	overflow-wrap: break-word;
 	overflow-y: hidden !important;
 	
-	
 	display: -webkit-box !important;
 	-webkit-line-clamp: var(--nav-text-max-row);
 	-webkit-box-orient: vertical;
@@ -209,7 +212,8 @@ header.page-header{
 		font-weight: var(--base-theme-header-nav-font-weight);
 		line-height: inherit;
 		text-decoration: none;
-		
+		background-color: inherit;
+		color: inherit;
 		display: flex;
 		justify-content: space-between;
 	}
