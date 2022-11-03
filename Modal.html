@@ -26,6 +26,8 @@
 <link href="fontawesome-free-6.2.0-web/css/solid.css" rel="stylesheet">
 <link href="fontawesome-free-6.2.0-web/css/regular.css" rel="stylesheet">
 
+<link rel="stylesheet" href="css-spinners-2.2.0/css/spinner/dots.css" type="text/css">
+  
 <script>
 
 function launchModal(id){
@@ -58,7 +60,8 @@ function dismissModal(id){
 		
 		<button class="btn-secondary" onclick="launchModal('modal_one')">Select One</button>
 		<button class="btn-secondary" onclick="launchModal('modal_many')">Select Many</button>
-		
+		<button class="btn-secondary" onclick="launchModal('modal_pulling_result')">Pulling result</button>
+		<button class="btn-secondary" onclick="launchModal('modal_validation_message')">Validation message</button>
 		
 	</section>
 </div>
@@ -454,6 +457,58 @@ function dismissModal(id){
 			<div class="modal-footer text-align-center">
 					<button class="btn-primary" onclick="dismissModal('modal_filter')">Apply</<button>
 					<button class="btn-secondary" onclick="dismissModal('modal_filter')">Cancel</<button>
+			</div>
+		</div>
+	</div>
+	<div class="modal-backdrop"></div>
+</div>
+
+
+
+<div id="modal_pulling_result" class="modal hide">
+	<div class="modal-dialog">
+		<div class="modal-container">
+			<div class="modal-body">
+			
+				<div class="stacked-list standard-margin-spacing-after">
+					<div class="stacked-list-body">
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell text-align-center">
+								<div style="padding: 50px">
+								<span class="dots-loader"></span>
+								</div>
+								
+							</div>
+						</div>
+						<div class="stacked-list-body-row stack-of-1">
+							<div class="stack-cell text-align-center">
+								Processing ...
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-backdrop"></div>
+</div>
+
+
+<div id="modal_validation_message" class="modal hide">
+	<div class="modal-dialog">
+		<div class="modal-container">
+			<div class="modal-header">
+				<h1>Validation failed</h1>
+				<span class="modal-close btn-shorthand-close" aria-label="Close" onclick="alert('close me'); dismissModal('modal_validation_message')"></span>
+			</div>
+			<div class="modal-body">
+				There are some problems with the provided information. <br>
+				Please review and then submit again after correction.
+			
+			</div>
+			<div class="modal-footer text-align-center">
+					<button class="btn-primary" onclick="dismissModal('modal_validation_message')">OK</<button>
 			</div>
 		</div>
 	</div>

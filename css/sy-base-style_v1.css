@@ -45,8 +45,8 @@
 	--base-theme-form-textbox-padding-left-right: 0.5rem;
 	
 	
-	--base-theme-form-overlay-icon-btn-size: calc(var(--base-theme-form-element-min-height) * 0.65);
-	--base-theme-form-overlay-icon-font-size: calc(var(--base-theme-form-element-min-height) * 0.35);
+	--base-theme-form-overlay-icon-btn-size: calc(var(--base-theme-form-element-min-height) * 0.64);
+	--base-theme-form-overlay-icon-font-size: calc(var(--base-theme-form-element-min-height) * 0.34);
 	--base-theme-form-overlay-icon-custom-font-size: calc(var(--base-theme-form-element-min-height) * 0.5);
 	
 	/* Badge size */

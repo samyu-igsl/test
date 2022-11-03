@@ -14,6 +14,7 @@
 <link href="css/sy-table_v1.css" rel="stylesheet">
 <link href="css/sy-text_and_font_v1.css" rel="stylesheet">
 <link href="css/sy-form_v1.css?" rel="stylesheet">
+<link href="css/sy-modal_v1.css" rel="stylesheet">
 <link href="css/sy-skeleton_v1.css" rel="stylesheet">
 <link href="css/sy-helper-class_v1.css" rel="stylesheet">
 
@@ -22,7 +23,20 @@
 <link href="fontawesome-free-6.2.0-web/css/fontawesome.css" rel="stylesheet">
 <link href="fontawesome-free-6.2.0-web/css/solid.css" rel="stylesheet">
 
-  
+<script>
+
+function launchModal(id){
+	document.getElementById(id).classList.remove("hide");
+	document.body.classList.add("body-no-scroll");
+}
+
+function dismissModal(id){
+	document.getElementById(id).classList.add("hide");
+	document.body.classList.remove("body-no-scroll");
+}
+
+
+</script>
 <title>Form</title>
 
 </head>
@@ -204,7 +218,7 @@ ABCDE12345</textarea>
 		<label class="text-block-label">Input group</label>
 		<div class="rwd-input-group" style="width: 500px">
 			<input type="text">
-			<button class="btn-secondary">Check</button> 
+			<button class="btn-primary">Check</button> 
 		</div>
 		
 		<label class="text-block-label">English Name (Surname first)</label>
@@ -255,7 +269,7 @@ ABCDE12345</textarea>
 		<div class="rwd-input-group" style="width: 500px">
 			<input class="rwd-input-group-shrink-for-overlay-icon" type="text" readonly>
 			<a class="btn btn-shorthand-delete rwd-input-group-overlay-icon" href="#" onclick="alert('Clicked');return false;"></a>
-			<button class="btn-secondary">Select...</button>
+			<button class="btn-primary">Select...</button>
 		</div>
 
 	</section>
@@ -286,6 +300,7 @@ ABCDE12345</textarea>
 	</section>
 	<section>
 		<h1>Validation</h1>
+		<button class="btn-secondary" onclick="launchModal('modal_validation_message')">Validation modal</button>
 		<label class="text-block-label text-compulsory text-warning">Text label</label>
 		<input class="rwd-input-text" type="text" placeholder="text" value="ABCDE12345">
 		<label class="text-block-assist text-warning text-validation-message">The value is missing.</label>
@@ -299,97 +314,27 @@ ABCDE12345</textarea>
 
 </div>
 
-
-<div class="container">
-	<section>
-		<h1>Skeleton - Grid Card</h1>
-		<div class="grid-card-list">
-			<div class="grid-card skeleton">
-				<div class="grid-card-body">
-					<div class="grid-card-body-image-cap">
-						<div class="skeleton-image"></div>
-					</div>
-					<div class="grid-card-body-title">
-						<div class="skeleton-title"></div>
-					</div>
-					<div class="grid-card-body-abstract">
-						<div class="skeleton-text-90"></div>
-						<div class="skeleton-text-90"></div>
-						<div class="skeleton-text-90"></div>
-						<div class="skeleton-text-90"></div>
-						<div class="skeleton-text-90"></div>
-					</div>
-				</div>
-				<div class="grid-card-footer">
-					<div class="grid-card-footer-wrapper">
-						<div class="grid-card-footer-left">
-							<div class="skeleton-text-40"></div>
-						</div>
-						<div class="grid-card-footer-right">
-							<div class="skeleton-circle-button"></div>
-						</div>
-					</div>
-				</div>
+<div id="modal_validation_message" class="modal hide">
+	<div class="modal-dialog">
+		<div class="modal-container">
+			<div class="modal-header">
+				<h1>Validation failed</h1>
+				<span class="modal-close btn-shorthand-close" aria-label="Close" onclick="alert('close me'); dismissModal('modal_validation_message')"></span>
+			</div>
+			<div class="modal-body">
+				There are some problems with the provided information. <br>
+				Please review and then submit again after correction.
+			
+			</div>
+			<div class="modal-footer text-align-center">
+					<button class="btn-primary" onclick="dismissModal('modal_validation_message')">OK</<button>
 			</div>
 		</div>
-	</section>
-	<section>
-		<h1>Skeleton - Stack list (stacked-with-style-in-block)</h1>
-		<div class="stacked-list stacked-with-style-in-block skeleton-stacked-list"></div>
-		<div class="stacked-list stacked-with-style-in-block skeleton-stacked-list"></div>
-		<div class="stacked-list stacked-with-style-in-block skeleton-stacked-list"></div>
-	</section>
-	<section>
-		<h1>Skeleton - Stack list (stacked-with-style-in-separator)</h1>
-		<div class="stacked-list stacked-with-style-in-separator skeleton-stacked-list"></div>
-		<div class="stacked-list stacked-with-style-in-separator skeleton-stacked-list"></div>
-		<div class="stacked-list stacked-with-style-in-separator skeleton-stacked-list"></div>
-	</section>
-	<section>
-		<h1>Skeleton - Traditional Table</h1>
-		<table class="rwd-table">
-			<tr>
-				<th style="width: 50px"><!--<input type="checkbox">--></th>
-				<th style="width: 20%"><div class="skeleton-text"></th>
-				<th style="width: auto"><div class="skeleton-text"></th>
-				<th style="width: auto"><div class="skeleton-text"></th>
-				<th style="width: 50px"></th>
-			</tr>
-			<tr>
-				<td></td>
-				<td><div class="skeleton-text"></td>
-				<td><div class="skeleton-text"></td>
-				<td><div class="skeleton-text"></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><div class="skeleton-text"></td>
-				<td><div class="skeleton-text"></td>
-				<td><div class="skeleton-text"></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><div class="skeleton-text"></td>
-				<td><div class="skeleton-text"></td>
-				<td><div class="skeleton-text"></td>
-				<td></td>
-			</tr>
-		</table>
-	</section>
+	</div>
+	<div class="modal-backdrop"></div>
 </div>
 
-<footer>
-	<div class="container">
-		<section>
-			<h1>Footer</h1>
-			<p>
-			This is <a href="">hyperlink</a> in footer. This is <a name="anchor">anchor</a> only in footer.
-			</p>
 
-		</section>
-	</div>
-</footer>
+
 </body>
 </html>

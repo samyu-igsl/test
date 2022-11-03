@@ -38,23 +38,23 @@ p {
 
 
 /* Hyperlink */
-a:not([class*="link-"]):not([class*="header-navigation-"]){
+a:not([class*="link-"]):not([class*="header-navigation-"]):not([class*="btn"]){
 	color: var(--theme-body-hyperlink-font-color-base);
 	text-decoration: underline;
 	cursor: pointer;
 }
 
-a:not([class*="link-"]):not([class*="header-navigation-"]):hover {
+a:not([class*="link-"]):not([class*="header-navigation-"]):not([class*="btn"]):hover {
 	color: var(--theme-body-hyperlink-font-color-hover);
 	text-decoration: none;
 }
 
 
-footer a:not([class*="link-"]):not([class*="header-navigation-"]){
+footer a:not([class*="link-"]):not([class*="header-navigation-"]):not([class*="btn"]){
 	color: var(--theme-footer-hyperlink-font-color-base);
 }
 
-footer a:not([class*="link-"]):not([class*="header-navigation-"]):hover {
+footer a:not([class*="link-"]):not([class*="header-navigation-"]):not([class*="btn"]):hover {
 	color: var(--theme-footer-hyperlink-font-color-hover);
 	text-decoration: none;
 }
