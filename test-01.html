@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Video CDN performance test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.3/plyr.css" />
+	
+	<script src="https://cdn.plyr.io/3.7.3/plyr.js"></script>
+  </head>
+
+  <body>
+    <div class="grid">
+      <header>
+        <h1>Video test</h1>
+      </header>
+      <main>
+		<!--<input id="url" type="text" style="width: 100%" value="https://fsd-tcap-content-cdn.igsl-group.com/content/video-test/test-01.mp4">-->
+		<input id="url" type="text" style="width: 100%" value="test-01.mp4">
+		<br><button onclick="setPlayer()">Play 00:00 (Check point 1)</button>
+		<br><button onclick="seek(2)">Play 01:00 (Check point 2)</button>
+		<br><button onclick="seek(3)">Play 02:00 (Check point 3)</button>
+		<br><button onclick="seek(4)">Play 03:00 (Check point 4)</button>
+		<br><button onclick="seek(5)">Play 04:00 (Check point 5)</button>
+		<br><br>
+        <div id="container">
+          <video
+            controls
+            crossorigin
+            playsinline
+            id="player"
+          >
+            <!-- Video files -->
+            <source
+              src=""
+              type="video/mp4"
+              size="720"
+            />
+          </video>
+        </div>
+
+      </main>
+    </div>
+
+	<script>
+	  const player = new Plyr('#player');
+	  
+		function setPlayer(){
+			player.source = {
+			  type: 'video',
+			  title: 'Example title',
+			  sources: [
+				{
+				  src: document.getElementById('url').value,
+				  type: 'video/mp4',
+				  size: 720,
+				}
+			  ]
+			};
+			
+			player.play();
+		}
+	  
+	  function seek(cp){
+	    if (cp == 1){  player.forward(0) };
+	    if (cp == 2){  player.forward(60) };
+	    if (cp == 3){  player.forward(120) };
+	    if (cp == 4){  player.forward(180) };
+	    if (cp == 5){  player.forward(240) };
+	  }
+	</script>
+  </body>
+</html>
