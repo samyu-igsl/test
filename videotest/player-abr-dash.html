@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Video CDN performance test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.3/plyr.css" />
+	
+	<script src="https://cdn.plyr.io/3.7.3/plyr.js"></script>
+	<script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+  </head>
+
+  <body>
+    <div class="grid">
+      <header>
+        <h1>AVC/H264 Video Adaptive Streaming (DASH)</h1>
+      </header>
+      <main>
+		<br><br>
+        <div id="container">
+          <video
+            controls
+            crossorigin
+            playsinline
+            id="player"
+          >
+          </video>
+        </div>
+
+      </main>
+    </div>
+
+	<script>
+	  var player = new Plyr('#player');
+	  var video_url = 'ABR/output.mpd';
+	  
+      dash = dashjs.MediaPlayer().create(),
+      video = document.querySelector('#player');
+
+	  dash.initialize(video, video_url, true);
+
+	</script>
+  </body>
+</html>
