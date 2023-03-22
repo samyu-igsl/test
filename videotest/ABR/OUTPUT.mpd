@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="urn:mpeg:dash:schema:mpd:2011"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd"
+	profiles="urn:mpeg:dash:profile:isoff-live:2011"
+	type="static"
+	mediaPresentationDuration="PT2M24.2S"
+	maxSegmentDuration="PT5.0S"
+	minBufferTime="PT11.8S">
+	<ProgramInformation>
+		<Title>Jurassic World (2015) Trailer A (2D) International 1080p</Title>
+	</ProgramInformation>
+	<ServiceDescription id="0">
+	</ServiceDescription>
+	<Period id="0" start="PT0.0S">
+		<AdaptationSet id="0" contentType="video" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" frameRate="24/1" maxWidth="1920" maxHeight="1038" par="320:173" lang="eng">
+			<Representation id="0" mimeType="video/mp4" codecs="avc1.640028" bandwidth="2383219" width="1920" height="1038" sar="1:1">
+				<SegmentTemplate timescale="12288" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="87040" />
+						<S d="68608" />
+						<S d="62464" />
+						<S d="120320" />
+						<S d="102912" />
+						<S d="69632" />
+						<S d="123392" />
+						<S d="106496" />
+						<S d="63488" r="1" />
+						<S d="78848" />
+						<S d="61952" />
+						<S d="90624" />
+						<S d="84992" />
+						<S d="91136" />
+						<S d="69632" />
+						<S d="64000" />
+						<S d="73728" />
+						<S d="69120" />
+						<S d="72704" />
+						<S d="68608" />
+						<S d="67584" />
+						<S d="12288" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+			<Representation id="1" mimeType="video/mp4" codecs="avc1.64001f" bandwidth="1540715" width="1280" height="692" sar="1:1">
+				<SegmentTemplate timescale="12288" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="88064" />
+						<S d="67584" />
+						<S d="62464" />
+						<S d="120320" />
+						<S d="102912" />
+						<S d="99840" />
+						<S d="106496" />
+						<S d="93184" />
+						<S d="63488" r="1" />
+						<S d="78848" />
+						<S d="62464" />
+						<S d="90112" />
+						<S d="84992" />
+						<S d="91136" />
+						<S d="69632" />
+						<S d="66560" />
+						<S d="71168" />
+						<S d="69120" />
+						<S d="62464" />
+						<S d="73728" />
+						<S d="72704" />
+						<S d="12288" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+			<Representation id="2" mimeType="video/mp4" codecs="avc1.64001e" bandwidth="794935" width="854" height="462" sar="10560:10553">
+				<SegmentTemplate timescale="12288" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="87040" />
+						<S d="90112" />
+						<S d="93696" />
+						<S d="66560" />
+						<S d="103936" />
+						<S d="99328" />
+						<S d="105472" />
+						<S d="109568" />
+						<S d="84480" />
+						<S d="61952" />
+						<S d="107008" />
+						<S d="90112" />
+						<S d="87552" />
+						<S d="88576" />
+						<S d="85504" />
+						<S d="70144" />
+						<S d="75776" />
+						<S d="61440" />
+						<S d="96256" />
+						<S d="72704" />
+						<S d="35840" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+		<AdaptationSet id="1" contentType="audio" startWithSAP="1" segmentAlignment="true" bitstreamSwitching="true" lang="eng">
+			<Representation id="3" mimeType="audio/mp4" codecs="mp4a.40.2" bandwidth="256000" audioSamplingRate="48000">
+				<AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="1" />
+				<SegmentTemplate timescale="48000" initialization="init-stream$RepresentationID$.m4s" media="chunk-stream$RepresentationID$-$Number%05d$.m4s" startNumber="1">
+					<SegmentTimeline>
+						<S t="0" d="239616" />
+						<S d="240640" r="26" />
+						<S d="190464" />
+					</SegmentTimeline>
+				</SegmentTemplate>
+			</Representation>
+		</AdaptationSet>
+	</Period>
+</MPD>
