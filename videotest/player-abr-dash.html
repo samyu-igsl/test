@@ -31,13 +31,15 @@
     </div>
 
 	<script>
+	/*
 	  var player = new Plyr('#player', {
 		'controls': ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'quality', 'airplay', 'fullscreen'],
 		'quality1': {
-		  default: 576,
+		  default: 720,
 		  options: [1080, 720, 480]
 		}
 	  });
+	  */
 	  var video_url = 'ABR/OUTPUT.mpd';
 	  
       dash = dashjs.MediaPlayer().create();
@@ -53,9 +55,14 @@
         });
 	  
       video = document.querySelector('#player');
-	  video.controls
 
 	  dash.initialize(video, video_url, true);
+	  plyr.setup(video, {
+	    'controls': ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'quality', 'airplay', 'fullscreen'],
+		'quality1': {
+		  default: 720,
+		  options: [1080, 720, 480]
+		});
 
 	</script>
   </body>
