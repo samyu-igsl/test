@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>H264 Video Adaptive Bitrate Streaming (with HLS - DASH auto detection)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.3/plyr.css" />
+	
+	<script src="https://cdn.plyr.io/3.7.3/plyr.js"></script>
+	<script src="dash.all.min.js"></script>
+	<script src="hls.min.js"></script>
+	<style>
+:root {
+	--base-theme-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--base-theme-body-font-size: 1rem; /* Typically browser default is "medium size" (16px) */
+	--base-theme-body-font-weight: 400; /* Regular */
+	--base-theme-body-font-weight-bold: 600; /* 600 */
+	--base-theme-body-line-height: 1.5; /* 1rem * 1.5  = 1.5 rem */
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	font-family: var(--base-theme-body-font-family);
+	font-size: var(--base-theme-body-font-size);
+	font-weight: var(--base-theme-body-font-weight);
+	line-height: var(--base-theme-body-line-height);
+}
+
+main {
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0;
+	width: 90%;
+}
+	</style>
+  </head>
+
+  <body>
+    <div class="grid">
+	  <main>
+        <header>
+          <h1>AVC/H264 Video Adaptive Bitrate Streaming (with HLS - DASH auto detection)</h1>
+        </header>
+
+	    <video id="main_video" playsinline controls preload="auto" crossorigin="anonymous" data-poster="poster.jpg">      
+			<source id="source_dash" src="https://samyu-igsl.github.io/test/videotest/avc-bq/master.mpd" crossorigin="anonymous">
+			<source id="source_hls" src="https://samyu-igsl.github.io/test/videotest/avc-bq/master.m3u8" crossorigin="anonymous">
+	    </video>
+		
+      </main>
+    </div>
+
+	<script>
+	
+	// Video player
+	// Plyr: https://plyr.io
+	
+	// Library for adaptive bitrate streaming support
+	// HLS.js: https://nochev.github.io/hls.js/docs/html/
+	// DASH.js: http://cdn.dashjs.org/latest/jsdoc/index.html	
+
+	(function () {
+		// param
+		const allowSeeking = true;	// Whether to allow seeking
+		const startPosition = -1; // -1 = start from beginning
+		const bufferLength = 10; // Load buffer in seconds
+
+		const source_hls = document.querySelector("#source_hls").src; // Source meta file in HLS format (.m3u8)
+		const source_dash = document.querySelector("#source_dash").src; // Source meta file in DASH format (.mpd)
+		const video = document.querySelector('video');
+		
+		// initialise defaultOptions in Plyr player
+		const defaultOptions = {};
+
+		defaultOptions.quality = {
+			default: 0,
+			forced: true,
+		}
+		defaultOptions.settings = ['captions', 'quality']; // Enable captions and quality capability in Plyr player
+		
+		// Add Auto Label
+		defaultOptions.i18n = {
+			qualityLabel: {
+				0: 'Auto',
+			},
+		}
+		
+		defaultOptions.invertTime = false;
+		
+		if (allowSeeking){
+			defaultOptions.controls = ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'];
+		} else {
+			defaultOptions.controls = ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'];
+			defaultOptions.seekTime = 0;
+			defaultOptions.listeners = {
+				seek (e) {
+				  e.preventDefault();
+				  return false;
+				}
+			}
+		}
+
+
+		// HLS
+		if (!Hls.isSupported()){
+			console.log('Using HLS streaming');
+			const hls = new Hls({
+				maxBufferLength: bufferLength,
+				maxMaxBufferLength: bufferLength,
+				backBufferLength: bufferLength,
+				startPosition : startPosition
+			});
+			hls.loadSource(source_hls);
+
+			// From the m3u8 playlist, hls parses the manifest and returns
+			// all available video qualities. This is important, in this approach,
+			// we will have one source on the Plyr player.
+			hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+				// Transform available levels into an array of integers (height values).
+				const availableQualities = hls.levels.map((l) => l.height).sort(function(a, b){return b - a});
+				availableQualities.unshift(0) //prepend 0 to quality array (Auto option)
+
+				console.log(availableQualities);
+				
+				// Add new qualities to option
+				defaultOptions.quality.options = availableQualities;
+				defaultOptions.quality.onChange = function(e){
+					var newQuality = e;
+					console.log('newQuality:', newQuality);
+					if (newQuality === 0) {
+						window.hls.currentLevel = -1; //Enable AUTO quality if option.value = 0
+						console.log("Auto quality");
+					} else {
+						window.hls.levels.forEach((level, levelIndex) => {
+							if (level.height === newQuality) {
+								console.log("Found quality match with " + newQuality);
+								window.hls.currentLevel = levelIndex;
+							}
+						});
+					}
+				};
+				
+				// onChangeQuality
+				hls.on(Hls.Events.LEVEL_SWITCHED, function (event, data) {
+					console.log('level', data.level, 'height', hls.levels[data.level].height, hls.levels);
+					var span = document.querySelector(".plyr__menu__container [data-plyr='quality'][value='0'] span")
+					if (hls.autoLevelEnabled) {
+						span.innerHTML = `AUTO (${hls.levels[data.level].height}p)`
+					} else {
+						span.innerHTML = `AUTO`
+					}
+				})
+			
+				window.hls.currentLevel = -1; // default to AUTO quality
+				console.log("Set auto quality for dynamic quality switch")
+				
+				// Initialize new Plyr player with quality options
+				window.plyr_player = new Plyr(video, defaultOptions);
+				
+			});	
+
+			hls.attachMedia(video);
+			window.hls = hls;
+			
+		// DASH
+		} else if (!dashjs.supportsMediaSource()) {
+			console.log('Using DASH streaming');
+			window.player = dashjs.MediaPlayer().create();
+			player.initialize(video, source_dash, false, startPosition);
+			var bitratesinfo = [];
+
+			player.on("streamInitialized", function () {
+				bitratesinfo = player.getBitrateInfoListFor("video");
+				//console.log('My bitrate:' + bitratesinfo.length);
+				
+				var onChangeQuality = function (e) {
+					if (e){
+						if (e.mediaType == 'audio') return;
+					}
+					var level = player.getQualityFor('video');
+					console.log("onChangeQuality", level, bitratesinfo, 'event:', e);
+
+					var span = document.querySelector(".plyr__menu__container [data-plyr='quality'][value='0'] span")
+					if (player.getSettings().streaming.abr.autoSwitchBitrate) {
+						span.innerHTML = `AUTO (${bitratesinfo[level].height}p)`
+					} else {
+						span.innerHTML = `AUTO`
+					}
+				};
+				
+				const availableQualities = bitratesinfo.map((l) => l.height).sort(function(a, b){return b - a});
+				availableQualities.unshift(0) //prepend 0 to quality array (Auto option)
+				console.log(availableQualities);
+				
+				// Add new qualities to option
+				defaultOptions.quality.options = availableQualities;
+				defaultOptions.quality.onChange = function(e){
+					var newQuality = e;
+					console.log('newQuality:', newQuality);
+					
+					if (newQuality === 0) {
+					
+						player.updateSettings({
+							streaming: {
+								abr: {
+									autoSwitchBitrate: true
+								}
+							}
+						});
+						console.log("Auto quality");
+						
+					} else {
+						player.updateSettings({
+							streaming: {
+								abr: {
+									autoSwitchBitrate: false
+								}
+							}
+						});
+						bitratesinfo.forEach((level, levelIndex) => {
+							if (level.height === newQuality) {
+								console.log("Found quality match with " + newQuality);
+								player.setQualityFor('video', levelIndex);
+							}
+						});
+					}
+					onChangeQuality();
+				};
+				
+				player.on("qualityChangeRendered", onChangeQuality);
+				
+				player.updateSettings({
+					streaming: {
+						// Buffer length
+						buffer: {
+							stableBufferTime: bufferLength,
+							bufferTimeAtTopQuality: bufferLength,
+							bufferTimeAtTopQualityLongForm: bufferLength
+						},
+						// Default to AUTO quality
+						abr: {
+							autoSwitchBitrate: true
+						}
+					}
+				});
+
+				console.log("Set auto quality for dynamic quality switch");
+				
+				// Initialize new Plyr player with quality options
+				window.plyr_player = new Plyr(video, defaultOptions);
+			});
+			
+		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+
+			video.addEventListener('canplay',function() {
+			  video.play();
+			});
+			
+		} else {
+			console.log("This browser does not support HLS and DASH streaming");
+			alert("This browser does not support HLS and DASH streaming");
+		}
+		
+	})();
+	</script>
+  </body>
+</html>
+
