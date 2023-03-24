@@ -257,10 +257,7 @@ main {
 			});
 			
 		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-
-			video.addEventListener('canplay',function() {
-			  video.play();
-			});
+			window.plyr_player = new Plyr(video, defaultOptions);
 			
 		} else {
 			console.log("This browser does not support HLS and DASH streaming");
