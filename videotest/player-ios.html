@@ -108,7 +108,7 @@ main {
 
 
 		// HLS
-		if (Hls.isSupported()){
+		if (!Hls.isSupported()){
 			console.log('Using HLS streaming');
 			const hls = new Hls({
 				maxBufferLength: bufferLength,
@@ -169,7 +169,7 @@ main {
 			window.hls = hls;
 			
 		// DASH
-		} else if (dashjs.supportsMediaSource()) {
+		} else if (!dashjs.supportsMediaSource()) {
 			console.log('Using DASH streaming');
 			window.player = dashjs.MediaPlayer().create();
 			player.initialize(video, source_dash, false, startPosition);
@@ -257,6 +257,7 @@ main {
 			});
 			
 		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+			alert("support")
 			video.src = source.hls;
 			window.plyr_player = new Plyr(video, defaultOptions);
 			
