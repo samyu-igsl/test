@@ -49,8 +49,8 @@ main {
         </header>
 
 	    <video id="main_video" playsinline controls preload="auto" crossorigin="anonymous" data-poster="poster.jpg">      
-			<source id="source_dash" src="https://samyu-igsl.github.io/test/videotest/avc-bq/master.mpd" crossorigin="anonymous">
-			<source id="source_hls" src="https://samyu-igsl.github.io/test/videotest/avc-bq/master.m3u8" crossorigin="anonymous">
+			<!--<source id="source_dash" src="https://samyu-igsl.github.io/test/videotest/avc-bq/master.mpd" crossorigin="anonymous">
+			<source id="source_hls" src="https://samyu-igsl.github.io/test/videotest/avc-bq/master.m3u8" crossorigin="anonymous">-->
 	    </video>
 		
       </main>
@@ -71,8 +71,8 @@ main {
 		const startPosition = -1; // -1 = start from beginning
 		const bufferLength = 10; // Load buffer in seconds
 
-		const source_hls = document.querySelector("#source_hls").src; // Source meta file in HLS format (.m3u8)
-		const source_dash = document.querySelector("#source_dash").src; // Source meta file in DASH format (.mpd)
+		const source_hls = "https://samyu-igsl.github.io/test/videotest/avc-bq/master.m3u8"; //document.querySelector("#source_hls").src; // Source meta file in HLS format (.m3u8)
+		const source_dash = "https://samyu-igsl.github.io/test/videotest/avc-bq/master.mpd"; //document.querySelector("#source_dash").src; // Source meta file in DASH format (.mpd)
 		const video = document.querySelector('video');
 		
 		// initialise defaultOptions in Plyr player
@@ -257,6 +257,7 @@ main {
 			});
 			
 		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+			video.src = source.hls;
 			window.plyr_player = new Plyr(video, defaultOptions);
 			
 		} else {
