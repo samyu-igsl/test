@@ -257,7 +257,7 @@ main {
 			});
 			
 		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-			video.src = source.hls;
+			video.src = source_hls;
 			window.plyr_player = new Plyr(video, defaultOptions);
 			
 		} else {
