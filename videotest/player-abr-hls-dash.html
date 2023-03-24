@@ -257,6 +257,12 @@ main {
 			});
 			
 		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+		
+			const availableQualities = ['1080', '720', '320'];
+
+			// Add new qualities to option
+			defaultOptions.quality.options = availableQualities;
+		
 			video.src = source_hls;
 			window.plyr_player = new Plyr(video, defaultOptions);
 			
