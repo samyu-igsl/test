@@ -257,7 +257,8 @@ main {
 			});
 			
 		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-		
+			defaultOptions.settings = ['captions']; // Quality selection not supported in iOS, disable it
+			
 			const availableQualities = ['1080', '720', '320'];
 
 			// Add new qualities to option
